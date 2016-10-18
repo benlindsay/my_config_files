@@ -7,7 +7,7 @@
 	followTags = true
 [core]
 	editor = vim
-	excludesfile = ~/.gitignore
+	excludesfile = ~/.gitignore_global
 [alias]
 	unstage = reset HEAD --
 	st = status
