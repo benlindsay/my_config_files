@@ -5,6 +5,11 @@ if [ -f ~/.bashrc ]; then
   . ~/.bashrc
 fi
 
+# Get environment variables that are common to all my *nix machines
+if [ -f ~/.bash_profile_shared ]; then
+  . ~/.bash_profile_shared
+fi
+
 # Path environment variables
 export PATH="$HOME/bin:$HOME/usr/paraview/bin:$PATH"
 export PATH="$PATH:$HOME/usr/site-packages/data_utils"
@@ -24,10 +29,6 @@ export LIBRARY_PATH="$HOME/usr/boost/lib:$LIBRARY_PATH"
 # Courtesy of osxdaily.com/2013/02/05/improve-terminal-appearance-mac-os-x/
 export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[36;1m\]\W\[\033[m\]\$ "
 
-# Prevent right click download errors on rrlogin
+# iterm2 stuff
 export iterm2_hostname=rrlogin.seas.upenn.edu
-
-# Get environment variables that are common to all my *nix machines
-if [ -f ~/.bash_profile_shared ]; then
-  . ~/.bash_profile_shared
-fi
+test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"

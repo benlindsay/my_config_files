@@ -26,6 +26,3 @@ LS_COLORS=$LS_COLORS:'*.dmg=31'  # Disk Image		= Bold, Red
 LS_COLORS=$LS_COLORS:'ln=35'     # symlinks             = Purple
 
 export LS_COLORS
-
-# iterm2 stuff
-test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
