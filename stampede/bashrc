@@ -48,6 +48,12 @@ if [ -z "$__BASHRC_SOURCED__" -a "$ENVIRONMENT" != BATCH ]; then
     . ~/.bashrc_shared
   fi
 
+  # Aliases specific to stampede
+  alias ls='ls --color'
+  alias l='ls'
+alias ll='ls -la'
+  alias l.='ls -d .* --color'
+
   # Custom functions I want available all the time
   . $HOME/bin/small_funcs.sh
   . $HOME/bin/cd_func.sh

@@ -14,6 +14,18 @@ fi
 module load intel-11.1
 module load openmpi-1.4.3-intel
 
+alias ls='ls --color'
+alias l='ls'
+alias ll='ls -la'
+alias l.='ls -d .* --color'
+
+# small_funcs contains small functions
+source ~/bin/small_funcs.sh
+
+# acd_func adds functionality to the cd command
+source ~/bin/cd_func.sh
+
+
 #------------------------------------------------------------------
 # Source aliases and functions I share with all my *nix machines
 #------------------------------------------------------------------

@@ -1,0 +1,31 @@
+# .bash_profile
+
+# Get the aliases and functions
+if [ -f ~/.bashrc ]; then
+  source ~/.bashrc
+fi
+
+# Get the environment variables shared across all my *nix machines
+if [ -f ~/.bash_profile_shared ]; then
+  source ~/.bash_profile_shared
+fi
+
+# Requested by homebrew
+export PATH="$HOME/.local/bin:/usr/local/sbin:/usr/local/bin:$PATH"
+export PYTHONPATH="$PYTHONPATH:$HOME/.local/site-packages"
+
+# export EDITOR="/usr/local/bin/vim"
+# added by Anaconda 2.1.0 installer
+# export PATH="/Users/lindsb/anaconda/bin:$PATH"
+
+# path to pvpython executable
+# export PATH="$PATH:/Applications/paraview.app/Contents/bin"
+
+# path to paraview packages
+# export PYTHONPATH="/Applications/paraview.app/Contents/Python"
+
+# Command prompt format string
+export PS1='\[\033[32m\]imac:\[\033[36;1m\]\W\[\033[m\]\$ '
+# export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[36;1m\]\w\[\033[m\]\$ "
+
+test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"

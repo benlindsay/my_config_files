@@ -1,13 +1,22 @@
-alias ls='ls --color'
-alias l='ls'
+# .bashrc_shared
+
+# Aliases and functions shared across all my *nix machines
+# Source from ~
+
 alias v='vim'
+alias vi='vim'
 alias vd='vimdiff'
-alias g='gnuplot'
 alias up='cd ..; ls'
 alias killjobs='kill $(jobs -p)'
 alias tarstd='tar -zcvf'
 alias ipn='ipython notebook'
-alias j='jupyter'
+alias jn='jupyter notebook'
+alias rrlogin='ssh -Y lindsb@rrlogin.seas.upenn.edu'
+alias xsede='ssh -Y lindsb@login.xsede.org'
+alias eniac='ssh -Y lindsb@eniac.seas.upenn.edu'
+alias rreniac='ssh -Y rrgroup@eniac.seas.upenn.edu'
+alias fsl='ssh -Y bjlinds@ssh.fsl.byu.edu'
+alias stamp='ssh -Y lindsb@stampede.tacc.xsede.org'
 alias psweep='param-sweep.sh'
 
 # Git short hash
@@ -15,12 +24,6 @@ alias gda='git describe --always'
 
 # Git commit descriptor: <tag>-<#commit after tag>-<short hash>
 alias gdt='git describe --tags'
-
-# small_funcs contains small functions
-source ~/bin/small_funcs.sh
-
-# acd_func adds functionality to the cd command
-source ~/bin/cd_func.sh
 
 function c {
   cd $1

@@ -1,0 +1,22 @@
+# .bashrc
+
+# Get the aliases and functions shared across all my *nix machines
+if [ -f ~/.bashrc_shared ]; then
+  source ~/.bashrc_shared
+fi
+
+alias ls='ls -G'
+alias l='ls'
+alias ll='ls -la'
+alias l.='ls -d .* --color'
+
+# small_funcs contains small functions
+source ~/.local/bin/small_funcs.sh
+
+# acd_func adds functionality to the cd command
+source ~/.local/bin/cd_func.sh
+
+# Load rbenv automatically by appending
+# the following to ~/.bash_profile:
+
+eval "$(rbenv init -)"
