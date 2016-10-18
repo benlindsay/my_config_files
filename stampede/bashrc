@@ -45,18 +45,18 @@ if [ -z "$__BASHRC_SOURCED__" -a "$ENVIRONMENT" != BATCH ]; then
 
   # Source functions and aliases shared across all my *nix machines
   if [ -f ~/.bashrc_shared ]; then
-    . ~/.bashrc_shared
+    source ~/.bashrc_shared
   fi
 
   # Aliases specific to stampede
   alias ls='ls --color'
   alias l='ls'
-alias ll='ls -la'
+  alias ll='ls -la'
   alias l.='ls -d .* --color'
 
   # Custom functions I want available all the time
-  . $HOME/bin/small_funcs.sh
-  . $HOME/bin/cd_func.sh
+  source $HOME/bin/small_funcs.sh
+  source $HOME/bin/cd_func.sh
 
   # Change command line editing from emacs(default) to vi style
   # set -o vi
@@ -95,7 +95,7 @@ if [ -z "$__PERSONAL_PATH__" ]; then
   export HOSTNAME_SHORT="stampede"
 
   if [ -f ~/.bash_profile_shared ]; then
-    . ~/.bash_profile_shared
+    source ~/.bash_profile_shared
   fi
 
   # Set default editor. This helps with Git.

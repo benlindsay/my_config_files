@@ -4,7 +4,7 @@
 # Source global definitions
 #------------------------------------------------------------------
 if [ -f /etc/bashrc ]; then
-  . /etc/bashrc
+  source /etc/bashrc
 fi
 
 #------------------------------------------------------------------
@@ -30,5 +30,5 @@ source ~/bin/cd_func.sh
 # Source aliases and functions I share with all my *nix machines
 #------------------------------------------------------------------
 if [ -f ~/.bashrc_shared ]; then
-  . ~/.bashrc_shared
+  source ~/.bashrc_shared
 fi
