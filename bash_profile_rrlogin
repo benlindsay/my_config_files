@@ -1,0 +1,33 @@
+# .bash_profile
+
+# Get the aliases and functions
+if [ -f ~/.bashrc ]; then
+  . ~/.bashrc
+fi
+
+# Path environment variables
+export PATH="$HOME/bin:$HOME/usr/paraview/bin:$PATH"
+export PATH="$PATH:$HOME/usr/site-packages/data_utils"
+export PYTHONPATH="$PYTHONPATH:/home/lindsb/usr/site-packages"
+export PYTHONPATH="$PYTHONPATH:/home/lindsb/studies/film_stamp/code"
+export FFTWHOME="$HOME/usr/fftw_mpi"
+export FFTW_OPENMP="$HOME/usr/fftw_openmp"
+
+export PATH="$PATH:$HOME/usr/texlive/bin/x86_64-linux"
+export INFOPATH="$HOME/usr/texlive/texmf-dist/doc/info:$INFOPATH"
+export MANPATH="$HOME/usr/texlive/texmf-dist/doc/man:$MANPATH"
+
+export CPLUS_INCLUDE_PATH="$HOME/usr/boost/include:$CPLUS_INCLUDE_PATH"
+export LIBRARY_PATH="$HOME/usr/boost/lib:$LIBRARY_PATH"
+
+# Color and format terminal prompt
+# Courtesy of osxdaily.com/2013/02/05/improve-terminal-appearance-mac-os-x/
+export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[36;1m\]\W\[\033[m\]\$ "
+
+# Prevent right click download errors on rrlogin
+export iterm2_hostname=rrlogin.seas.upenn.edu
+
+# Get environment variables that are common to all machines I use
+if [ -f ~/.bash_profile_shared ]; then
+  . ~/.bash_profile_shared
+fi

@@ -1,0 +1,23 @@
+# want vi to be the default editor for readline
+set editing-mode vi
+
+# vi settings
+$if mode=vi
+    # type 'bind -p' to see all the things you can bind keys to
+    # normal mode
+    set keymap vi-command
+    "gg": beginning-of-history
+    "G": end-of-history
+    # insert mode
+    set keymap vi-insert
+    "jk": vi-movement-mode # remap escape
+$endif
+
+# Tab for vim-style complete
+TAB: menu-complete
+"\e[Z": complete
+
+# Shift-Tab for reverse vim-style complete
+# "\e[Z":   "\e-1\C-i"
+# "\e\C-d": possible-completions
+# "\e\C-l": complete

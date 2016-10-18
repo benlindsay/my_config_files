@@ -1,0 +1,35 @@
+alias ls='ls --color'
+alias l='ls'
+alias v='vim'
+alias vd='vimdiff'
+# alias c='cd'
+alias g='gnuplot'
+alias up='cd ..; ls'
+alias killjobs='kill $(jobs -p)'
+alias tarstd='tar -zcvf'
+alias ipn='ipython notebook'
+alias j='jupyter'
+alias psweep='param-sweep.sh'
+
+# Git short hash
+alias gda='git describe --always'
+
+# Git commit descriptor: <tag>-<#commit after tag>-<short hash>
+alias gdt='git describe --tags'
+
+# small_funcs contains small functions
+source ~/bin/small_funcs.sh
+
+# acd_func adds functionality to the cd command
+source ~/bin/cd_func.sh
+
+function c {
+  cd $1
+  ls
+}
+
+# Allow vi-style commands to control command line
+# set -o vi
+
+# Turn off popup thing for git password
+unset SSH_ASKPASS

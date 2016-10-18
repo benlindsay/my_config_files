@@ -1,0 +1,31 @@
+# .bash_profile_shared
+
+# Environment variables that are common to all machines I use
+# source from ~/.bash_profile
+
+# Variables to facilitate scp file transfers
+export RRLOGIN="lindsb@rrlogin.seas.upenn.edu:/home/lindsb"
+export COMET="lindsb@comet.sdsc.xsede.org:/home/lindsb"
+export STAMPH="lindsb@stampede.tacc.utexas.edu:/home1/03555/lindsb"
+export STAMPW="lindsb@stampede.tacc.utexas.edu:/work/03555/lindsb"
+export DARTERH="darter.nics.xsede.org:/nics/d/home/lindsb"
+export DARTERS="darter.nics.xsede.org:/lustre/medusa/lindsb"
+
+#------------------------------------------------------------------
+# Modify ls colors
+#------------------------------------------------------------------
+
+LS_COLORS=$LS_COLORS:'*.tar=31'  # tar Archive		= Bold, Red
+LS_COLORS=$LS_COLORS:'*.tgz=31'  # tar/gzip Archive	= Bold, Red
+LS_COLORS=$LS_COLORS:'*.tbz2=31' # tar/bzip2 Archive	= Bold, Red
+LS_COLORS=$LS_COLORS:'*.Z=31'    # compress Archive	= Bold, Red
+LS_COLORS=$LS_COLORS:'*.gz=31'   # gzip Archive		= Bold, Red
+LS_COLORS=$LS_COLORS:'*.bz2=31'  # bzip2 Archive	= Bold, Red
+LS_COLORS=$LS_COLORS:'*.zip=31'  # zip Archive		= Bold, Red
+LS_COLORS=$LS_COLORS:'*.dmg=31'  # Disk Image		= Bold, Red
+LS_COLORS=$LS_COLORS:'ln=35'     # symlinks             = Purple
+
+export LS_COLORS
+
+# iterm2 stuff
+test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
