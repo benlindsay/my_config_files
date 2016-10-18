@@ -4,19 +4,19 @@
 # Source global definitions
 #------------------------------------------------------------------
 if [ -f /etc/bashrc ]; then
-	. /etc/bashrc
+  . /etc/bashrc
 fi
 
 #------------------------------------------------------------------
-# User specific aliases and functions
+# Aliases and functions specific to rrlogin
 #------------------------------------------------------------------
 
 module load intel-11.1
 module load openmpi-1.4.3-intel
 
 #------------------------------------------------------------------
-# Source global definitions
+# Source aliases and functions I share with all my *nix machines
 #------------------------------------------------------------------
-if [ -f ~/.bash_profile_shared ]; then
-	. ~/.bash_profile_shared
+if [ -f ~/.bashrc_shared ]; then
+  . ~/.bashrc_shared
 fi

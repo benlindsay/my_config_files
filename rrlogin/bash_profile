@@ -27,7 +27,7 @@ export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[36;1m\]\W\[\033[m\]\$
 # Prevent right click download errors on rrlogin
 export iterm2_hostname=rrlogin.seas.upenn.edu
 
-# Get environment variables that are common to all machines I use
+# Get environment variables that are common to all my *nix machines
 if [ -f ~/.bash_profile_shared ]; then
   . ~/.bash_profile_shared
 fi
