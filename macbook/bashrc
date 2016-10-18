@@ -1,0 +1,69 @@
+# .bashrc
+
+#------------------------------------------------------------------
+# Source global definitions
+#------------------------------------------------------------------
+if [ -f /etc/bashrc ]; then
+  source /etc/bashrc
+fi
+
+#------------------------------------------------------------------
+# Source aliases and functions shared across all my *nix machines
+#------------------------------------------------------------------
+if [ -f ~/.bashrc_shared ]; then
+  source ~/.bashrc_shared
+fi
+
+if [ ! -z "$PS1" ]; then
+  # I only want my added cd functionality during an interactive session.
+  # Otherwise I get weird errors when I use scp
+  source $HOME/.local/bin/cd_func.sh
+  source $HOME/.local/bin/cdg.sh
+fi
+
+function remoteput() {
+  argarray=("$@")
+  n_minus_1=$((${#argarray[@]}-2))
+  remoteaddress="${argarray[0]}"
+  localpaths="${argarray[@]:1:$n_minus_1}"
+  remotepath="${argarray[$n_minus_1]}"
+  scp -r $localpaths $remoteaddress/$remotepath
+}
+
+function rrget() {
+  scp -r $RRLOGIN/$1 $2
+}
+
+function rrput() {
+  remoteput $RRLOGIN $@
+}
+
+function swget() {
+  scp -r $STAMPW/$1 $2
+}
+
+function swput() {
+  remoteput $RRLOGIN $@
+}
+
+function shget() {
+  scp -r $STAMPH/$1 $2
+}
+
+function shput() {
+  remoteput $STAMPH $@
+}
+
+#------------------------------------------------------------------
+# Aliases for commands
+#------------------------------------------------------------------
+
+alias ls='ls -G'
+alias l='ls'
+alias localhost='cd /Applications/MAMP/htdocs'
+# alias curl='curl -O'
+alias vmd='/Applications/VMD\ 1.9.2.app/Contents/MacOS/startup.command'
+
+# Maybe make a function out of this some time. Copies files and
+# while maintaining file structure
+# rsync -rav -e ssh --include='*/' --include='rho*.tec' --exclude='*' lindsb@rrlogin.seas.upenn.edu:/home/lindsb/sim/180ps-77p2vp/wall-thickness/ ~/Downloads

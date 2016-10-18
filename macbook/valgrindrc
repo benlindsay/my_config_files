@@ -1,0 +1,4 @@
+--tool=memcheck
+--leak-check=full
+--show-reachable=yes
+--show-possibly-lost=yes
