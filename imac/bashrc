@@ -8,7 +8,7 @@ fi
 alias ls='ls -G'
 alias l='ls'
 alias ll='ls -la'
-alias l.='ls -d .* --color'
+alias l.='ls -Gd .*'
 
 # small_funcs contains small functions
 source ~/.local/bin/small_funcs.sh
