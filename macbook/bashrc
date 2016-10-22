@@ -65,6 +65,7 @@ alias l.='ls -Gd .*'
 alias localhost='cd /Applications/MAMP/htdocs'
 # alias curl='curl -O'
 alias vmd='/Applications/VMD\ 1.9.2.app/Contents/MacOS/startup.command'
+alias k3='source activate kaggle3'
 
 # Maybe make a function out of this some time. Copies files and
 # while maintaining file structure
