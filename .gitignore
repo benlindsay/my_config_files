@@ -2,3 +2,4 @@ vim/bundle/
 *.cache
 *.cache/
 *.cache/*
+/matplotlib/matplotlibrc
