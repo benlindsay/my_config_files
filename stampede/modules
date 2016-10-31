@@ -1,6 +1,5 @@
 module load git
 module load paraview
-module load python/2.7.12
 
 # The intel module is a prerequisite for the fftw3 module
 module load intel
