@@ -15,8 +15,3 @@ source ~/.local/bin/small_funcs.sh
 
 # acd_func adds functionality to the cd command
 source ~/.local/bin/cd_func.sh
-
-# Load rbenv automatically by appending
-# the following to ~/.bash_profile:
-
-eval "$(rbenv init -)"
