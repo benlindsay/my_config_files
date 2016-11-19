@@ -9,6 +9,7 @@ alias ls='ls -G'
 alias l='ls'
 alias ll='ls -la'
 alias l.='ls -Gd .*'
+alias k3='source activate kaggle3'
 
 # small_funcs contains small functions
 source ~/.local/bin/small_funcs.sh
