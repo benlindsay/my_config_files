@@ -15,3 +15,20 @@ snippet elsif
 snippet else
 	{% else %}
 		${0}
+
+snippet for
+	{% for ${1} in ${2} %}
+		${0}
+	{% endfor %}
+
+snippet capture
+	{% capture ${1} %}{{ ${0} }}{% endcapture %}
+
+snippet break
+	{% break %}
+
+snippet assign
+	{% assign ${1} = ${2} %}${0}
+
+snippet include
+	{% include ${1} %}${0}
