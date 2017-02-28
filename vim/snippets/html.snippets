@@ -8,9 +8,15 @@ snippet ifl
 
 snippet elsif
 	{% elsif ${1} %}
-		${2}
-	{% else %}
 		${0}
+
+snippet unless
+	{% unless ${1} %}
+		${0}
+	{% endunless %}
+
+snippet unlessl
+	{% unless ${1} %}${0}{% endunless %}
 
 snippet else
 	{% else %}
