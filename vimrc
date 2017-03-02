@@ -377,6 +377,12 @@ endfunction
 nnoremap zt :call ToTopOrBottom(0)<cr>
 nnoremap zb :call ToTopOrBottom(1)<cr>
 
+" Use <leader>j and <leader>k to move down or up in the same column to the
+" next non-empty character
+" Inspired by http://stackoverflow.com/a/21286726/2680824
+:map <silent><leader>j :call search('\%' . virtcol('.') . 'v\S', 'wW')<CR>
+:map <silent><leader>k :call search('\%' . virtcol('.') . 'v\S', 'bW')<CR>
+
 " Escape insert mode by quickly hitting jk
 inoremap jk <esc>
 
