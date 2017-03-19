@@ -25,6 +25,8 @@ export MANPATH="$HOME/usr/texlive/texmf-dist/doc/man:$MANPATH"
 export CPLUS_INCLUDE_PATH="$HOME/usr/boost/include:$CPLUS_INCLUDE_PATH"
 export LIBRARY_PATH="$HOME/usr/boost/lib:$LIBRARY_PATH"
 
+export EDITOR="$HOME/bin/vim"
+
 # Color and format terminal prompt
 # Courtesy of osxdaily.com/2013/02/05/improve-terminal-appearance-mac-os-x/
 export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[36;1m\]\W\[\033[m\]\$ "
