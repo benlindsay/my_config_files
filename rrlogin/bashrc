@@ -18,6 +18,7 @@ alias ls='ls --color'
 alias l='ls'
 alias ll='ls -la'
 alias l.='ls -d .* --color'
+alias jnremote='jupyter notebook --no-browser --port=8889'
 
 # small_funcs contains small functions
 source ~/bin/small_funcs.sh
