@@ -67,6 +67,7 @@ alias localhost='cd /Applications/MAMP/htdocs'
 alias vmd='/Applications/VMD\ 1.9.2.app/Contents/MacOS/startup.command'
 alias k3='source activate kaggle3'
 alias spark='docker run -v $HOME/Jupyter:/home/jovyan/work -it -p 8888:8888 jupyter/all-spark-notebook'
+alias jnremote='echo "Copy the following address into your browser:"; echo "http://localhost:8888"; ssh -N -L localhost:8888:localhost:8889 lindsb@rrlogin.seas.upenn.edu'
 
 # Maybe make a function out of this some time. Copies files and
 # while maintaining file structure

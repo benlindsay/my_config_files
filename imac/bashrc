@@ -10,6 +10,7 @@ alias l='ls'
 alias ll='ls -la'
 alias l.='ls -Gd .*'
 alias k3='source activate kaggle3'
+alias jnremote='echo "Copy the following address into your browser:"; echo "http://localhost:8888"; ssh -N -L localhost:8888:localhost:8889 lindsb@rrlogin.seas.upenn.edu'
 
 # small_funcs contains small functions
 source ~/.local/bin/small_funcs.sh
