@@ -97,6 +97,7 @@ set spellcapcheck=
 " Tell rewrapping operations (i.e. gqip or gqq) to break lines to max 80
 " characters, but no automatic wrapping when typing over the 80 char line
 set textwidth=0 formatoptions=cq wrapmargin=0
+autocmd FileType tex setlocal textwidth=79 formatoptions=cqt wrapmargin=0
 
 function! ResCur()
   if line("'\"") <= line("$")
@@ -463,7 +464,9 @@ nnoremap <leader>O :<c-u>call OpenLines(v:count, -1)<cr>S
 " Use CTRL-D to delete text just inserted in insert mode. This is mostly so if
 " I create a new line after a comment that is automatically and unwantedly
 " commented out, I can just type CTRL-D quick to clear the comment
-inoremap <c-d> !<c-u>
+" CTRL-D otherwise shifts the line left by shiftwidth in insert mode, which is
+" also useful
+" inoremap <c-d> !<c-u>
 
 " Use CTRL-u to uppercase current word (uses up marker z)
 inoremap <c-u> <esc>mzviwU`za
