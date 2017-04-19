@@ -80,6 +80,10 @@ set relativenumber " shortcut is set rnu
 " Smarter scrolling
 set scrolloff=15
 
+" Show as much of the last line as possible even if the wrapped line goes off
+" the bottom of the page
+set display+=lastline
+
 " Make vertical and horizontal splits open to the right and below, respectively
 set splitright
 set splitbelow
