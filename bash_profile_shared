@@ -8,11 +8,12 @@ export RRLOGIN="lindsb@rrlogin.seas.upenn.edu:/home/lindsb"
 export COMET="lindsb@comet.sdsc.xsede.org:/home/lindsb"
 export STAMPH="lindsb@stampede.tacc.utexas.edu:/home1/03555/lindsb"
 export STAMPW="lindsb@stampede.tacc.utexas.edu:/work/03555/lindsb"
+export KNLH="login-knl1.stampede.tacc.utexas.edu:/home1/03555/lindsb"
+export KNLW="login-knl1.stampede.tacc.utexas.edu:/work/03555/lindsb"
 export DARTERH="darter.nics.xsede.org:/nics/d/home/lindsb"
 export DARTERS="darter.nics.xsede.org:/lustre/medusa/lindsb"
 export ENIAC="lindsb@eniac.seas.upenn.edu:/home1/l/lindsb"
 export RRENIAC="rrgroup@eniac.seas.upenn.edu:/home1/r/rrgroup"
-export KNL="login-knl1.stampede.tacc.utexas.edu"
 
 #------------------------------------------------------------------
 # Modify ls colors
