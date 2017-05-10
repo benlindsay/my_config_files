@@ -1,9 +1,5 @@
 module load git
-module load paraview
 
 # The intel module is a prerequisite for the fftw3 module
 module load intel
-module load fftw3/3.3.4
-
-# Launcher is used for parametric sweeps
-module load launcher/2.0
+module load fftw3
