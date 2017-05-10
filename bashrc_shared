@@ -31,6 +31,17 @@ function c {
   ls
 }
 
+# Takes REMOTE as argument, i.e. username@hostname
+function jnlocal() {
+  # capture REMOTE from argument
+  REMOTE=$1
+  # remove trailing path if username@hostname:/this/is/a/path/ is provided
+  REMOTE=${REMOTE%:*}
+  echo "Copy the following address into your browser:"
+  echo "http://localhost:8888"
+  ssh -N -L localhost:8888:localhost:8889 $REMOTE
+}
+
 # Allow vi-style commands to control command line
 # set -o vi
 
