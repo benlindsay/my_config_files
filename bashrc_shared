@@ -35,12 +35,22 @@ function c {
 # Takes REMOTE as argument, i.e. username@hostname
 function jnlocal() {
   # capture REMOTE from argument
-  REMOTE=$1
-  # remove trailing path if username@hostname:/this/is/a/path/ is provided
-  REMOTE=${REMOTE%:*}
+  if [ ! -z "$1" ]; then
+    REMOTE="$1"
+    # remove colon and anything after colon if there's a colon
+    REMOTE=${REMOTE%:*}
+  else
+    REMOTE="lindsb@rrlogin.seas.upenn.edu"
+  fi
+  # capture port from argument
+  if [ ! -z "$2" ]; then
+    PORT="$2"
+  else
+    PORT="8888"
+  fi
   echo "Copy the following address into your browser:"
-  echo "http://localhost:8888"
-  ssh -N -L localhost:8888:localhost:8889 $REMOTE
+  echo "http://localhost:$PORT"
+  ssh -N -L "localhost:$PORT:localhost:8889" "$REMOTE"
 }
 
 # Allow vi-style commands to control command line
