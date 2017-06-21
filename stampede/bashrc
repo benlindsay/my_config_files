@@ -78,7 +78,7 @@ if [ -z "$__PERSONAL_PATH__" ]; then
   # **** PLACE Environment Variables including PATH here.        ****
   ###################################################################
 
-  export PATH=$HOME/bin:$HOME/usr/miniconda/bin:$PATH
+  export PATH=$HOME/bin:$HOME/local/miniconda3/bin:$PATH
 
   # .../paraview/.../site-packages and .../paraview/.../site-packages/vtk
   # are necessary in order to use the paraview.simple python module. The
