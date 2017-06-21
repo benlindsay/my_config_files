@@ -3,6 +3,4 @@
 #
 # Copyright (c) @YEAR@ @USER@ <@EMAIL@>
 
-from __future__ import division
-
 @CURSOR@

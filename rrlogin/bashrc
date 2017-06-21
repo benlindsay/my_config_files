@@ -29,6 +29,6 @@ source ~/bin/cd_func.sh
 #------------------------------------------------------------------
 # Source aliases and functions I share with all my *nix machines
 #------------------------------------------------------------------
-if [ -f ~/.bashrc_shared ]; then
-  source ~/.bashrc_shared
-fi
+test -f ~/.bashrc_shared && . $_
+
+test -f ~/.git-completion.bash && . $_
