@@ -18,7 +18,7 @@ alias eniac='ssh -Y lindsb@eniac.seas.upenn.edu'
 alias rreniac='ssh -Y rrgroup@eniac.seas.upenn.edu'
 alias knl='ssh -Y lindsb@login-knl1.stampede.tacc.utexas.edu'
 alias fsl='ssh -Y bjlinds@ssh.fsl.byu.edu'
-alias stamp='ssh -Y lindsb@stampede.tacc.xsede.org'
+alias stamp='ssh -Y lindsb@stampede2.tacc.xsede.org'
 alias psweep='param-sweep.sh'
 
 # Git short hash
