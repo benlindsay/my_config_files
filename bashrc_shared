@@ -11,7 +11,9 @@ alias killjobs='kill $(jobs -p)'
 alias tarstd='tar -zcvf'
 alias ipn='ipython notebook'
 alias jn='jupyter notebook'
-alias jnremote='jupyter notebook --no-browser --port=8889'
+alias jnremote_rrlogin='jupyter notebook --no-browser --port=8889'
+alias jnremote_stamp='jupyter notebook --no-browser --port=8890'
+alias jnremote_comet='jupyter notebook --no-browser --port=8891'
 alias rrlogin='ssh -Y lindsb@rrlogin.seas.upenn.edu'
 alias xsede='ssh -Y lindsb@login.xsede.org'
 alias eniac='ssh -Y lindsb@eniac.seas.upenn.edu'
@@ -46,11 +48,19 @@ function jnlocal() {
   if [ ! -z "$2" ]; then
     PORT="$2"
   else
-    PORT="8888"
+    PORT="8889"
   fi
   echo "Copy the following address into your browser:"
-  echo "http://localhost:$PORT"
-  ssh -N -L "localhost:$PORT:localhost:8889" "$REMOTE"
+  echo "http://localhost:8888"
+  ssh -N -L "localhost:8888:localhost:$PORT" "$REMOTE"
+}
+
+function jnlocal_stamp() {
+  jnlocal $STAMPH 8890
+}
+
+function jnlocal_comet() {
+  jnlocal $STAMPH 8891
 }
 
 # Allow vi-style commands to control command line
