@@ -6,6 +6,17 @@ snippet fig figure environment (includegraphics)
 	\end{figure}
 	${0}
 
+snippet ali align environment
+	\begin{align}
+		\label{eq:${1}}
+		${0}
+	\end{align}
+
+snippet ali* align* environment
+	\begin{align*}
+		${0}
+	\end{align*}
+
 snippet color textcolor tag
 	\textcolor{${1:red}}{${0}}
 
@@ -15,3 +26,16 @@ snippet partial
 snippet equation reference to an equation
 	${1:equation} \ref{eq:${2}}${0}
 
+#delimiter
+snippet lr left right
+	\left${1} ${0} \right${2}
+snippet lr) left( right) 
+	\left( ${0} \right)
+snippet lr| left| right| 
+	\left| ${0} \right|
+snippet lr} left\{ right\} 
+	\left\\{ ${0} \right\\}
+snippet lr] left[ right] 
+	\left[ ${0} \right]
+snippet lra langle rangle 
+	\langle ${0} \rangle
