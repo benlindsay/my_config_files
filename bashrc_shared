@@ -61,7 +61,7 @@ function jnlocal_stamp() {
 }
 
 function jnlocal_comet() {
-  jnlocal $STAMPH 8891
+  jnlocal $COMET 8891
 }
 
 # Allow vi-style commands to control command line
