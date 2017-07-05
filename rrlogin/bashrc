@@ -13,6 +13,8 @@ fi
 
 module load intel-11.1
 module load openmpi-1.4.3-intel
+module load gcc/5.4
+module load cmake-3.6
 
 alias ls='ls --color'
 alias l='ls'
