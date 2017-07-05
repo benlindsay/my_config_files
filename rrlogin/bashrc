@@ -13,7 +13,6 @@ fi
 
 module load intel-11.1
 module load openmpi-1.4.3-intel
-module load gcc/5.4
 module load cmake-3.6
 
 alias ls='ls --color'
@@ -34,3 +33,9 @@ source ~/bin/cd_func.sh
 test -f ~/.bashrc_shared && . $_
 
 test -f ~/.git-completion.bash && . $_
+
+function load_gcc() {
+  module load gcc/5.4
+  export LD_LIBRARY_PATH="/opt/pkg/gcc/5.4/lib:$LD_LIBRARY_PATH"
+  export LD_LIBRARY_PATH="/opt/pkg/gcc/5.4/lib64:$LD_LIBRARY_PATH"
+}
