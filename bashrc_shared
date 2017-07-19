@@ -23,6 +23,7 @@ alias fsl='ssh -Y bjlinds@ssh.fsl.byu.edu'
 alias stamp='ssh -Y lindsb@stampede2.tacc.xsede.org'
 alias comet='ssh -Y lindsb@comet.sdsc.xsede.org'
 alias psweep='param-sweep.sh'
+alias docker_mpi='docker run --rm -it -v $(pwd):/project nlknguyen/alpine-mpich'
 
 # Git short hash
 alias gda='git describe --always'
