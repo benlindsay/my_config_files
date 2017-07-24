@@ -12,13 +12,11 @@ fi
 
 export HOSTNAME_SHORT="mac"
 
-# Added by Anaconda 2.1.0 installer on 1/14/2015
-# export PATH="$HOME/anaconda/bin:$PATH"
-
 # Add path to pvpython executable
 # export PATH="$PATH:/Applications/paraview.app/Contents/bin"
 
-# Add path to local functions
+# Modify PATH
+export PATH="$HOME/miniconda/bin:$PATH"
 export PATH="/usr/local/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 
