@@ -16,9 +16,9 @@ export HOSTNAME_SHORT="mac"
 # export PATH="$PATH:/Applications/paraview.app/Contents/bin"
 
 # Modify PATH
-export PATH="$HOME/miniconda/bin:$PATH"
 export PATH="/usr/local/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/miniconda/bin:$PATH"
 
 # Path to mysql
 # export PATH="$PATH:/Applications/MAMP/Library/bin"
