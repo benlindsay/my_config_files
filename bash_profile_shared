@@ -14,6 +14,7 @@ export DARTERH="lindsb@darter.nics.xsede.org:/nics/d/home/lindsb"
 export DARTERS="lindsb@darter.nics.xsede.org:/lustre/medusa/lindsb"
 export ENIAC="lindsb@eniac.seas.upenn.edu:/home1/l/lindsb"
 export RRENIAC="rrgroup@eniac.seas.upenn.edu:/home1/r/rrgroup"
+export RRSTORAGE="lindsb@158.130.77.59"
 
 #------------------------------------------------------------------
 # Modify ls colors
