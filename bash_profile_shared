@@ -4,17 +4,17 @@
 # source from ~/.bash_profile
 
 # Variables to facilitate scp file transfers
-export RRLOGIN="lindsb@rrlogin.seas.upenn.edu:/home/lindsb"
-export COMET="lindsb@comet.sdsc.xsede.org:/home/lindsb"
-export STAMPH="lindsb@stampede2.tacc.utexas.edu:/home1/03555/lindsb"
+export RRLOGIN="lindsb@rrlogin.seas.upenn.edu"
+export COMET="lindsb@comet.sdsc.xsede.org"
+export STAMPH="lindsb@stampede2.tacc.utexas.edu"
 export STAMPW="lindsb@stampede2.tacc.utexas.edu:/work/03555/lindsb"
-export KNLH="lindsb@login-knl1.stampede.tacc.utexas.edu:/home1/03555/lindsb"
+export KNLH="lindsb@login-knl1.stampede.tacc.utexas.edu"
 export KNLW="lindsb@login-knl1.stampede.tacc.utexas.edu:/work/03555/lindsb"
-export DARTERH="lindsb@darter.nics.xsede.org:/nics/d/home/lindsb"
+export DARTERH="lindsb@darter.nics.xsede.org"
 export DARTERS="lindsb@darter.nics.xsede.org:/lustre/medusa/lindsb"
-export ENIAC="lindsb@eniac.seas.upenn.edu:/home1/l/lindsb"
-export RRENIAC="rrgroup@eniac.seas.upenn.edu:/home1/r/rrgroup"
-export RRSTORAGE="lindsb@158.130.77.59"
+export ENIAC="lindsb@eniac.seas.upenn.edu"
+export RRENIAC="rrgroup@eniac.seas.upenn.edu"
+export RRSTORAGE="lindsb@rrstorage.synology.me"
 
 #------------------------------------------------------------------
 # Modify ls colors
