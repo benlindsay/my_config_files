@@ -98,8 +98,9 @@ if [ -z "$__PERSONAL_PATH__" ]; then
     source ~/.bash_profile_shared
   fi
 
-  # Set default editor. This helps with Git.
-  # export EDITOR='vim'
+  # Set default editor. This helps with git, crontab, and other programs when
+  # they let you edit files via an editor
+  export EDITOR='vim'
 
 fi
 
