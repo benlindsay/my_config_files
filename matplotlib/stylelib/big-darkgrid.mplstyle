@@ -3,6 +3,9 @@
 # .8 = light_gray
 figure.figsize: 8.0, 5.5
 figure.facecolor: white
+savefig.dpi: 120
+savefig.bbox: tight
+
 
 font.size: 16.0
 axes.labelsize: 20
