@@ -392,7 +392,7 @@ nnoremap zb :call ToTopOrBottom(1)<cr>
 inoremap jk <esc>
 
 " Prevent accidentally pressing q: from doing weird stuff
-nnoremap q: :echo 'Use :q to quit, not q:'<cr>
+" nnoremap q: :echo 'Use :q to quit, not q:'<cr>
 
 " Map H and L to  be strong left and right keys. i.e. H will go first to first
 " non-whitespace character of line, or to beginning of line if already there

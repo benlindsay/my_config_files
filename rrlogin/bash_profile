@@ -29,6 +29,9 @@ export EDITOR="$HOME/bin/vim"
 
 export PATH=$HOME/cctools/bin:$PATH
 
+export NP_PMF_PROJ="$HOME/studies/np-pmf"
+export BCP_NP_PHASE_PROJ="$HOME/studies/bcp-np-phase"
+
 # Color and format terminal prompt
 # Courtesy of osxdaily.com/2013/02/05/improve-terminal-appearance-mac-os-x/
 export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[36;1m\]\W\[\033[m\]\$ "

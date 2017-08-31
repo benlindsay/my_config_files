@@ -94,6 +94,9 @@ if [ -z "$__PERSONAL_PATH__" ]; then
   # Variable to help with git hooks and such
   export HOSTNAME_SHORT="stampede"
 
+  export NP_PMF_PROJ="/work/03555/lindsb/np-pmf"
+  export BCP_NP_PHASE_PROJ="$WORK/bcp-np-phase"
+
   if [ -f ~/.bash_profile_shared ]; then
     source ~/.bash_profile_shared
   fi
