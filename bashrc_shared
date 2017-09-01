@@ -33,6 +33,9 @@ alias gda='git describe --always'
 # Git commit descriptor: <tag>-<#commit after tag>-<short hash>
 alias gdt='git describe --tags'
 
+alias cd2='cd ../..'
+alias cd3='cd ../../..'
+
 function c {
   cd $1
   ls
