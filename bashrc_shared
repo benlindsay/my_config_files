@@ -41,6 +41,17 @@ function c {
   ls
 }
 
+function getsimdir {
+  if [ ! -z "$1" ]; then
+    jobid="$1"
+  else
+    echo "Usage: getsimdir [PBS Job ID]"
+    return 1
+  fi
+  simdir=$(qstat -f $jobid | grep PBS_O_WORKDIR | cut -d "=" -f 2)
+  echo "$simdir"
+}
+
 # Takes REMOTE as argument, i.e. username@hostname
 function jnlocal() {
   # capture REMOTE from argument
