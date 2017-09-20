@@ -101,7 +101,7 @@ set spellcapcheck=
 " Tell rewrapping operations (i.e. gqip or gqq) to break lines to max 80
 " characters, but no automatic wrapping when typing over the 80 char line
 set textwidth=0 formatoptions=cq wrapmargin=0
-autocmd FileType tex setlocal textwidth=79 formatoptions=cqt wrapmargin=0
+" autocmd FileType tex setlocal textwidth=79 formatoptions=cqt wrapmargin=0
 
 function! ResCur()
   if line("'\"") <= line("$")
