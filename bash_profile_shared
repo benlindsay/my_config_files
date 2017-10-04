@@ -3,6 +3,11 @@
 # Environment variables that are common to all machines I use
 # source from ~/.bash_profile
 
+# Export sensitive variables like usernames and keys. Don't share this file!
+if [ -f ~/.sensitive_vars ]; then
+  source ~/.sensitive_vars
+fi
+
 # Variables to facilitate scp file transfers
 export RRLOGIN="lindsb@rrlogin.seas.upenn.edu"
 export COMET="lindsb@comet.sdsc.xsede.org"
