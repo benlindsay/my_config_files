@@ -10,6 +10,11 @@ if [ -f ~/.bash_profile_shared ]; then
   source ~/.bash_profile_shared
 fi
 
+# Source bash_completion if available
+if [ -f /usr/local/etc/bash_completion ]; then
+  source /usr/local/etc/bash_completion
+fi
+
 export HOSTNAME_SHORT="mac"
 
 # Add path to pvpython executable
