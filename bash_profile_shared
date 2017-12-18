@@ -21,6 +21,10 @@ export ENIAC="lindsb@eniac.seas.upenn.edu"
 export RRENIAC="rrgroup@eniac.seas.upenn.edu"
 export RRSTORAGE="lindsb@rrstorage.synology.me"
 
+# Set characters to include in random password generation for unix pass
+export PASSWORD_STORE_CHARACTER_SET="a-zA-Z0-9*&^%$\#@!"
+export PASSWORD_STORE_ENABLE_EXTENSIONS=true
+
 #------------------------------------------------------------------
 # Modify ls colors
 #------------------------------------------------------------------
