@@ -73,5 +73,10 @@ function jnlocal_comet() {
 # Allow vi-style commands to control command line
 # set -o vi
 
+function passtail() {
+  pass -c $1
+  pass tail $1
+}
+
 # Turn off popup thing for git password
 unset SSH_ASKPASS
