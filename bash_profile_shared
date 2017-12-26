@@ -15,6 +15,7 @@ export DARTERS="lindsb@darter.nics.xsede.org:/lustre/medusa/lindsb"
 export ENIAC="lindsb@eniac.seas.upenn.edu"
 export RRENIAC="rrgroup@eniac.seas.upenn.edu"
 export RRSTORAGE="lindsb@rrstorage.synology.me"
+export ALUMNI="alumni@rrstorage.synology.me"
 
 #------------------------------------------------------------------
 # Modify ls colors
