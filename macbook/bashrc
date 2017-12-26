@@ -67,6 +67,7 @@ alias localhost='cd /Applications/MAMP/htdocs'
 alias vmd='/Applications/VMD\ 1.9.2.app/Contents/MacOS/startup.command'
 alias k3='source activate kaggle3'
 alias spark='docker run -v $HOME/Jupyter:/home/jovyan/work -it -p 8888:8888 jupyter/all-spark-notebook'
+alias chrome='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome'
 
 # Maybe make a function out of this some time. Copies files and
 # while maintaining file structure

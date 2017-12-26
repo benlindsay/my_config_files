@@ -4,3 +4,4 @@ vim/.netrwhist
 *.cache/
 *.cache/*
 /matplotlib/matplotlibrc
+/matplotlib/fontList.json

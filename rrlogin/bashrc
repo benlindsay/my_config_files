@@ -39,3 +39,14 @@ function load_gcc() {
   export LD_LIBRARY_PATH="/opt/pkg/gcc/5.4/lib:$LD_LIBRARY_PATH"
   export LD_LIBRARY_PATH="/opt/pkg/gcc/5.4/lib64:$LD_LIBRARY_PATH"
 }
+
+function getsimdir {
+  if [ ! -z "$1" ]; then
+    jobid="$1"
+  else
+    echo "Usage: getsimdir [PBS Job ID]"
+    return 1
+  fi
+  simdir=$(qstat -f $jobid | grep PBS_O_WORKDIR | cut -d "=" -f 2)
+  echo "$simdir"
+}
