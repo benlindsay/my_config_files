@@ -57,6 +57,7 @@ if [ -z "$__BASHRC_SOURCED__" -a "$ENVIRONMENT" != BATCH ]; then
   # Custom functions I want available all the time
   source $HOME/bin/small_funcs.sh
   source $HOME/bin/cd_func.sh
+  test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
 
   function getsimdir {
     if [ ! -z "$1" ]; then
