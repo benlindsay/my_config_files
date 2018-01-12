@@ -1,0 +1,36 @@
+# Aliases shared across all my *nix machines
+# Source from ~
+
+# Jupyter
+alias jn='jupyter notebook'
+alias jnremote_comet='jupyter notebook --no-browser --port=8891'
+alias jnremote_rrlogin='jupyter notebook --no-browser --port=8889'
+alias jnremote_stamp='jupyter notebook --no-browser --port=8890'
+
+# ssh
+alias alumni='ssh alumni@rrstorage.synology.me'
+alias comet='ssh -Y lindsb@comet.sdsc.xsede.org'
+alias eniac='ssh -Y lindsb@eniac.seas.upenn.edu'
+alias fsl='ssh -Y bjlinds@ssh.fsl.byu.edu'
+alias knl='ssh -Y lindsb@login-knl1.stampede.tacc.utexas.edu'
+alias rreniac='ssh -Y rrgroup@eniac.seas.upenn.edu'
+alias rrlogin='ssh -Y lindsb@rrlogin.seas.upenn.edu'
+alias rrstorage='ssh lindsb@rrstorage.synology.me'
+alias stamp='ssh -Y lindsb@stampede2.tacc.utexas.edu'
+alias stamp1='ssh -Y lindsb@login1.stampede2.tacc.utexas.edu'
+alias xsede='ssh -Y lindsb@login.xsede.org'
+
+# Helpers
+alias killjobs='kill $(jobs -p)'
+alias l.='ls -Gd .*'
+alias tarstd='tar -zcvf'
+alias v='vim'
+alias vd='vimdiff'
+alias vi='vim'
+alias docker_mpi='docker run --rm -it -v $(pwd):/project nlknguyen/alpine-mpich'
+
+# Git short hash
+alias gda='git describe --always'
+
+# Git commit descriptor: <tag>-<#commit after tag>-<short hash>
+alias gdt='git describe --tags'

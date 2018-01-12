@@ -1,0 +1,34 @@
+# Variables to facilitate scp file transfers
+export RRLOGIN="lindsb@rrlogin.seas.upenn.edu"
+export COMET="lindsb@comet.sdsc.xsede.org"
+export STAMPH="lindsb@stampede2.tacc.utexas.edu"
+export STAMPW="lindsb@stampede2.tacc.utexas.edu:/work/03555/lindsb"
+export KNLH="lindsb@login-knl1.stampede.tacc.utexas.edu"
+export KNLW="lindsb@login-knl1.stampede.tacc.utexas.edu:/work/03555/lindsb"
+export DARTERH="lindsb@darter.nics.xsede.org"
+export DARTERS="lindsb@darter.nics.xsede.org:/lustre/medusa/lindsb"
+export ENIAC="lindsb@eniac.seas.upenn.edu"
+export RRENIAC="rrgroup@eniac.seas.upenn.edu"
+export RRSTORAGE="lindsb@rrstorage.synology.me"
+export ALUMNI="alumni@rrstorage.synology.me"
+
+# Set characters to include in random password generation for unix pass
+export PASSWORD_STORE_CHARACTER_SET="a-zA-Z0-9*&^%$\#@!"
+export PASSWORD_STORE_ENABLE_EXTENSIONS=true
+
+
+#------------------------------------------------------------------
+# Modify ls colors
+#------------------------------------------------------------------
+
+# LS_COLORS=$LS_COLORS:'*.tar=31'  # tar Archive		= Bold, Red
+# LS_COLORS=$LS_COLORS:'*.tgz=31'  # tar/gzip Archive	= Bold, Red
+# LS_COLORS=$LS_COLORS:'*.tbz2=31' # tar/bzip2 Archive	= Bold, Red
+# LS_COLORS=$LS_COLORS:'*.Z=31'    # compress Archive	= Bold, Red
+# LS_COLORS=$LS_COLORS:'*.gz=31'   # gzip Archive		= Bold, Red
+# LS_COLORS=$LS_COLORS:'*.bz2=31'  # bzip2 Archive	= Bold, Red
+# LS_COLORS=$LS_COLORS:'*.zip=31'  # zip Archive		= Bold, Red
+# LS_COLORS=$LS_COLORS:'*.dmg=31'  # Disk Image		= Bold, Red
+LS_COLORS=$LS_COLORS:'ln=35'     # symlinks             = Purple
+
+export LS_COLORS

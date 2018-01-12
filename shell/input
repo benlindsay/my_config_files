@@ -1,0 +1,3 @@
+# Set jk to go into normal mode on command line
+bindkey "jk" vi-cmd-mode
+export KEYTIMEOUT=10
