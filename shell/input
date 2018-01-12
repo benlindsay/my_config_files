@@ -15,3 +15,6 @@ bindkey -M menuselect 'j' vi-down-line-or-history
 
 # Make it so TAB goes straight to the first option instead of having to TAB 2x
 setopt menu_complete
+
+# cd to directory just by typing the directory
+setopt autocd
