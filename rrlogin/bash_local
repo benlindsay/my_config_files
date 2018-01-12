@@ -1,0 +1,56 @@
+#------------------------------------------------------------------
+# Aliases and functions specific to rrlogin
+#------------------------------------------------------------------
+
+# module load intel-11.1
+# module load openmpi-1.4.3-intel
+# module load cmake-3.6
+
+alias l.='ls -d .* --color'
+
+# Path environment variables
+export PATH="$HOME/bin:$HOME/usr/miniconda/bin:$HOME/usr/paraview/bin:$PATH"
+export PATH="$PATH:$HOME/usr/site-packages/data_utils"
+export PYTHONPATH="$PYTHONPATH:/home/lindsb/usr/site-packages"
+export PYTHONPATH="$PYTHONPATH:/home/lindsb/studies/film_stamp/code"
+export FFTWHOME="$HOME/usr/fftw_mpi"
+export FFTW_OPENMP="$HOME/usr/fftw_openmp"
+
+# export PATH="$PATH:$HOME/usr/texlive/bin/x86_64-linux"
+# export INFOPATH="$HOME/usr/texlive/texmf-dist/doc/info:$INFOPATH"
+# export MANPATH="$HOME/usr/texlive/texmf-dist/doc/man:$MANPATH"
+
+export CPLUS_INCLUDE_PATH="$HOME/usr/boost/include:$CPLUS_INCLUDE_PATH"
+export LIBRARY_PATH="$HOME/usr/boost/lib:$LIBRARY_PATH"
+
+export EDITOR="$HOME/bin/vim"
+
+export PATH=$HOME/cctools/bin:$PATH
+
+export NP_PMF_PROJ="$HOME/studies/np-pmf"
+export BCP_NP_PHASE_PROJ="$HOME/studies/bcp-np-phase"
+export VDW_PROJ="$HOME/studies/vdw-interactions"
+
+# iterm2 stuff
+export iterm2_hostname=rrlogin.seas.upenn.edu
+shell_name=$(basename $SHELL)
+if [ -f ~/.iterm2_shell_integration.$shell_name ]; then
+  source .iterm2_shell_integration.$shell_name
+fi
+
+function load_gcc() {
+  module load gcc/5.4
+  export LD_LIBRARY_PATH="/opt/pkg/gcc/5.4/lib:$LD_LIBRARY_PATH"
+  export LD_LIBRARY_PATH="/opt/pkg/gcc/5.4/lib64:$LD_LIBRARY_PATH"
+}
+
+function getsimdir {
+  if [ ! -z "$1" ]; then
+    jobid="$1"
+  else
+    echo "Usage: getsimdir [PBS Job ID]"
+    return 1
+  fi
+  simdir=$(qstat -f $jobid | grep PBS_O_WORKDIR | cut -d "=" -f 2)
+  echo "$simdir"
+}
