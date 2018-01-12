@@ -15,6 +15,9 @@
 # By sourcing here, we insure that login and non-login shells have
 # consistent environments.
 
-if [ -f $HOME/.bashrc ]; then
-  source $HOME/.bashrc
-fi
+# if [ -f $HOME/.bashrc ]; then
+#   source $HOME/.bashrc
+# fi
+
+export SHELL=/bin/zsh
+exec /bin/zsh -l

@@ -1,0 +1,37 @@
+shell_name=$(basename $SHELL)
+if [ -f ~/.iterm2_shell_integration.$shell_name ]; then
+  source ~/.iterm2_shell_integration.$shell_name
+fi
+
+function getsimdir {
+  if [ ! -z "$1" ]; then
+    jobid="$1"
+  else
+    echo "Usage: getsimdir [Slurm Job ID]"
+    return 1
+  fi
+  simdir=$(scontrol show job $jobid | grep WorkDir | cut -d "=" -f 2)
+  echo "$simdir"
+}
+
+export PATH=$HOME/bin:$HOME/local/miniconda3/bin:$PATH
+
+# .../paraview/.../site-packages and .../paraview/.../site-packages/vtk
+# are necessary in order to use the paraview.simple python module. The
+# .../site-packages path seems to already be there, but it doesn't hurt
+# to add it again just to make sure.
+tmp1=/opt/apps/intel15/mvapich2_2_1
+tmp1=$tmp1/paraview/4.3.1/lib/paraview-4.3/site-packages
+export PYTHONPATH=$tmp1:$tmp1/vtk:$PYTHONPATH
+
+# Add my custom python module directory to PYTHONPATH
+export PYTHONPATH=$HOME/usr/site-packages:$PYTHONPATH
+
+# Variable to help with git hooks and such
+export HOSTNAME_SHORT="stampede"
+
+export NP_PMF_PROJ="/work/03555/lindsb/np-pmf"
+export BCP_NP_PHASE_PROJ="$WORK/bcp-np-phase"
+export EDITOR='vim'
+
+alias sq='squeue -o "%.9i %.6P %.25j %.4u %.2t %.10M %.3D %.17R" -u lindsb'
