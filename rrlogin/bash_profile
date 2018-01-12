@@ -31,6 +31,7 @@ export PATH=$HOME/cctools/bin:$PATH
 
 export NP_PMF_PROJ="$HOME/studies/np-pmf"
 export BCP_NP_PHASE_PROJ="$HOME/studies/bcp-np-phase"
+export VDW_PROJ="$HOME/studies/vdw-interactions"
 
 # Color and format terminal prompt
 # Courtesy of osxdaily.com/2013/02/05/improve-terminal-appearance-mac-os-x/
