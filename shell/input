@@ -1,10 +1,17 @@
 # Set jk to go into normal mode on command line
 bindkey "jk" vi-cmd-mode
+
+# Make it so jk have to be typed within 0.1 seconds to go to normal mode
+export KEYTIMEOUT=10
+
 # Shift-Tab to reverse search
 bindkey '^[[Z' reverse-menu-complete
+
 # use the vi navigation keys in menu completion
 bindkey -M menuselect 'h' vi-backward-char
 bindkey -M menuselect 'k' vi-up-line-or-history
 bindkey -M menuselect 'l' vi-forward-char
 bindkey -M menuselect 'j' vi-down-line-or-history
-export KEYTIMEOUT=10
+
+# Make it so TAB goes straight to the first option instead of having to TAB 2x
+setopt menu_complete
