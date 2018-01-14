@@ -205,6 +205,7 @@ Plug 'garbas/vim-snipmate'              " Framwork for inserting snippets
 Plug 'benlindsay/vim-snippets'          " Predefined snippets for snipmate
 Plug 'noahfrederick/vim-skeleton'       " Loads templates by file extension
 Plug 'jamessan/vim-gnupg'               " Edit gpg encrypted file
+Plug 'python-mode/python-mode'          " Turn vim into a python ide
 call plug#end()
 
 " ------------------------------ CTAGS -------------------------------------- "
