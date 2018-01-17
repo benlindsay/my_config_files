@@ -38,6 +38,12 @@ if [ -f ~/.iterm2_shell_integration.$shell_name ]; then
   source .iterm2_shell_integration.$shell_name
 fi
 
+function load_modules() {
+  module load intel-11.1
+  module load openmpi-1.4.3-intel
+  module load cmake-3.6
+}
+
 function load_gcc() {
   module load gcc/5.4
   export LD_LIBRARY_PATH="/opt/pkg/gcc/5.4/lib:$LD_LIBRARY_PATH"
