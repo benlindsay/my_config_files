@@ -6,6 +6,10 @@
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 
+" Makes for more powerful use of find function in vim
+set path+=**
+set wildmenu
+
 " Enable file type detection.
 " Use the default filetype settings, so that mail gets 'tw' set to 72,
 " 'cindent' is on in C files, etc.
@@ -206,7 +210,9 @@ Plug 'benlindsay/vim-snippets'          " Predefined snippets for snipmate
 Plug 'noahfrederick/vim-skeleton'       " Loads templates by file extension
 Plug 'jamessan/vim-gnupg'               " Edit gpg encrypted file
 " Get other plugins and commands defined locally
-source ~/.vim_local
+if !empty(glob("~/.vim_local"))
+  source ~/.vim_local
+endif
 call plug#end()
 
 " ------------------------------ CTAGS -------------------------------------- "
