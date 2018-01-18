@@ -32,6 +32,7 @@ export HOSTNAME_SHORT="stampede"
 
 export NP_PMF_PROJ="/work/03555/lindsb/np-pmf"
 export BCP_NP_PHASE_PROJ="$WORK/bcp-np-phase"
+export VDW_PROJ="$WORK/vdw-interactions"
 export EDITOR='vim'
 
 alias sq='squeue -o "%.9i %.6P %.25j %.4u %.2t %.10M %.3D %.17R" -u lindsb'
