@@ -1,0 +1,3 @@
+" .vim_local
+
+Plug 'python-mode/python-mode'          " Turn vim into a python ide
