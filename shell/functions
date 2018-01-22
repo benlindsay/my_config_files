@@ -1,4 +1,4 @@
-extract () {
+function extract {
     if [ -f $1 ] ; then
         case $1 in
             *.tar.bz2)        tar xjfv $1        ;;
@@ -21,7 +21,7 @@ extract () {
 
 
 # Takes REMOTE as argument, i.e. username@hostname
-function jnlocal() {
+function jnlocal {
   # capture REMOTE from argument
   if [ ! -z "$1" ]; then
     REMOTE="$1"
@@ -47,7 +47,11 @@ function mount_remotes {
   sshfs lindsb@stampede2.tacc.utexas.edu:/work/03555/lindsb ~/stampede/work -o reconnect,idmap=user,volname=work
 }
 
-passtail() {
+function passtail {
   pass -c $1
   pass tail $1
+}
+
+function macmount {
+  sshfs -o volname=$2 $1 $2
 }
