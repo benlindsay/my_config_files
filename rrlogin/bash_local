@@ -9,7 +9,7 @@
 alias l.='ls -d .* --color'
 
 # Path environment variables
-export PATH="$HOME/bin:$HOME/usr/miniconda/bin:$HOME/usr/paraview/bin:$PATH"
+export PATH="$HOME/bin:$HOME/usr/anaconda/bin:$HOME/usr/paraview/bin:$PATH"
 export PATH="$PATH:$HOME/usr/site-packages/data_utils"
 export PYTHONPATH="$PYTHONPATH:/home/lindsb/usr/site-packages"
 export PYTHONPATH="$PYTHONPATH:/home/lindsb/studies/film_stamp/code"
