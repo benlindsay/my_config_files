@@ -38,7 +38,7 @@ function jnlocal {
   fi
   echo "Copy the following address into your browser:"
   echo "http://localhost:8888"
-  ssh -N -L "localhost:8888:localhost:$PORT" "$REMOTE"
+  ssh -Y -N -L "localhost:8888:localhost:$PORT" "$REMOTE"
 }
 
 function mount_remotes {
