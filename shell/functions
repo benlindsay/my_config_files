@@ -42,9 +42,14 @@ function jnlocal {
 }
 
 function mount_remotes {
-  sshfs lindsb@rrlogin.seas.upenn.edu:/home/lindsb ~/rrlogin -o reconnect,idmap=user,volname=rrlogin
-  sshfs lindsb@stampede2.tacc.utexas.edu:/home1/03555/lindsb ~/stampede/home -o reconnect,idmap=user,volname=home
-  sshfs lindsb@stampede2.tacc.utexas.edu:/work/03555/lindsb ~/stampede/work -o reconnect,idmap=user,volname=work
+  umount ~/rrlogin ~/stampede/home ~/stampede/work
+  sshfs lindsb@rrlogin.seas.upenn.edu:/home/lindsb ~/rrlogin -o volname=rrlogin
+  sshfs lindsb@stampede2.tacc.utexas.edu:/home1/03555/lindsb ~/stampede/home -o volname=home
+  sshfs lindsb@stampede2.tacc.utexas.edu:/work/03555/lindsb ~/stampede/work -o volname=work
+}
+
+function unmount_stamp {
+  umount ~/stampede/home ~/stampede/work
 }
 
 function passtail {

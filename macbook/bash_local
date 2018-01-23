@@ -25,7 +25,7 @@ export PYTHONPATH="$HOME/.local/site-packages"
 export iterm2_hostname=rrlogin.seas.upenn.edu
 shell_name=$(basename $SHELL)
 if [ -f ~/.iterm2_shell_integration.$shell_name ]; then
-  source .iterm2_shell_integration.$shell_name
+  source ~/.iterm2_shell_integration.$shell_name
 fi
 
 # if [ -f /usr/local/etc/bash_completion.d/passtail ]; then
