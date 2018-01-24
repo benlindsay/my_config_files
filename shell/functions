@@ -41,11 +41,19 @@ function jnlocal {
   ssh -Y -N -L "localhost:8888:localhost:$PORT" "$REMOTE"
 }
 
-function mount_remotes {
-  umount ~/rrlogin ~/stampede/home ~/stampede/work
+function mount_rrlogin {
+  umount ~/rrlogin
   sshfs lindsb@rrlogin.seas.upenn.edu:/home/lindsb ~/rrlogin -o volname=rrlogin
+}
+
+function mount_stamp {
+  umount ~/stampede/home ~/stampede/work
   sshfs lindsb@stampede2.tacc.utexas.edu:/home1/03555/lindsb ~/stampede/home -o volname=home
   sshfs lindsb@stampede2.tacc.utexas.edu:/work/03555/lindsb ~/stampede/work -o volname=work
+}
+
+function unmount_rrlogin {
+  umount ~/rrlogin
 }
 
 function unmount_stamp {
