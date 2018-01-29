@@ -22,6 +22,7 @@ alias xsede='ssh -Y lindsb@login.xsede.org'
 
 # Helpers
 alias killjobs='kill $(jobs -p)'
+alias l='ls'
 alias l.='ls -Gd .*'
 alias tarstd='tar -zcvf'
 alias v='vim'
