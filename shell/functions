@@ -68,3 +68,10 @@ function passtail {
 function macmount {
   sshfs -o volname=$2 $1 $2
 }
+
+# Changes all files in current directory of the form w*.all to w*.res
+function w_all_to_res {
+  for f in w*.all; do
+    mv $f ${f%.all}.res
+  done
+}
