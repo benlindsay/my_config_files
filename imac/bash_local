@@ -4,7 +4,9 @@ alias jnremote='echo "Copy the following address into your browser:"; echo "http
 
 # /usr/local stuff Requested by homebrew
 export PATH="/usr/local/sbin:/usr/local/bin:$PATH"
-export PATH="$HOME/.local/bin:$HOME/.local/miniconda/bin:$PATH"
+
+# Export personal and miniconda bins
+export PATH="$HOME/.local/bin:$HOME/miniconda/bin:$PATH"
 
 # Python stuff
 export PYTHONPATH="$PYTHONPATH:$HOME/.local/site-packages"
