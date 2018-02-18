@@ -29,6 +29,7 @@ alias v='vim'
 alias vd='vimdiff'
 alias vi='vim'
 alias docker_mpi='docker run --rm -it -v $(pwd):/project nlknguyen/alpine-mpich'
+alias .='source'
 
 # Git short hash
 alias gda='git describe --always'
