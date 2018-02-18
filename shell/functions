@@ -65,6 +65,31 @@ function passtail {
   pass tail $1
 }
 
+function passgen {
+  if [ $# -gt 0 ]; then
+    n_words=$1
+  else
+    n_words=3
+  fi
+
+  SPECIAL_ARRAY=('!' '@' '#' '$' '%' '^' '&' '*')
+  first=true
+
+  for word in $(gshuf -n$n_words /usr/share/dict/words); do
+    cap_word=$(echo $word | awk '{print toupper(substr($0,1,1))""substr($0,2)}')
+    if $first; then
+      password="$cap_word"
+      first=false
+    else
+      rand=$(( (RANDOM % 8) + 1 ))
+      rand_special="${SPECIAL_ARRAY[$rand]}"
+      password="$password$rand_special$cap_word"
+    fi
+  done
+
+  echo "$password"
+}
+
 function macmount {
   sshfs -o volname=$2 $1 $2
 }
