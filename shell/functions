@@ -66,28 +66,46 @@ function passtail {
 }
 
 function passgen {
-  if [ $# -gt 0 ]; then
-    n_words=$1
-  else
-    n_words=3
-  fi
+
+  capitalize=true
+  add_special=true
+  n_words=3
+  re='^[0-9]+$'
+  for arg in $@; do
+    if [ "$arg" = '--nocap' ]; then
+      capitalize=false
+    elif [ "$arg" = '--nospecial' ]; then
+      add_special=false
+    elif [[ "$arg" =~ "$re" ]] ; then
+      n_words="$arg"
+    fi
+  done
 
   SPECIAL_ARRAY=('!' '@' '#' '$' '%' '^' '&' '*')
   first=true
 
   for word in $(gshuf -n$n_words /usr/share/dict/words); do
-    cap_word=$(echo $word | awk '{print toupper(substr($0,1,1))""substr($0,2)}')
+    if $capitalize; then
+      next_word=$(echo $word | awk '{print toupper(substr($0,1,1))""substr($0,2)}')
+    else
+      next_word="$word"
+    fi
     if $first; then
-      password="$cap_word"
+      password="$next_word"
       first=false
     else
-      rand=$(( (RANDOM % 8) + 1 ))
-      rand_special="${SPECIAL_ARRAY[$rand]}"
-      password="$password$rand_special$cap_word"
+      if $add_special; then
+        rand=$(( (RANDOM % 8) + 1 ))
+        rand_special="${SPECIAL_ARRAY[$rand]}"
+        password="$password$rand_special$next_word"
+      else
+        password="$password$next_word"
+      fi
     fi
   done
 
   echo "$password"
+
 }
 
 function macmount {
