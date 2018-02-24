@@ -16,6 +16,7 @@ export ALUMNI="alumni@rrstorage.synology.me"
 export PASSWORD_STORE_CHARACTER_SET="a-zA-Z0-9*&^%$\#@!"
 export PASSWORD_STORE_ENABLE_EXTENSIONS=true
 
+export FPATH="$HOME/.zsh/completion:$FPATH"
 
 #------------------------------------------------------------------
 # Modify ls colors

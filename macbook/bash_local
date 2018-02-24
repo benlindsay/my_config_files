@@ -29,6 +29,8 @@ if [ -f ~/.iterm2_shell_integration.$shell_name ]; then
   source ~/.iterm2_shell_integration.$shell_name
 fi
 
+autoload -Uz compinit && compinit -i
+
 # if [ -f /usr/local/etc/bash_completion.d/passtail ]; then
 #   # https://stackoverflow.com/a/8492043/2680824
 #   # autoload bashcompinit
