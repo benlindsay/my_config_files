@@ -1,0 +1,3 @@
+" .vim_local
+
+Plug 'Vimjas/vim-python-pep8-indent'     " Improved Python indentation
