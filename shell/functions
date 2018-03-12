@@ -52,6 +52,11 @@ function mount_stamp {
   sshfs lindsb@stampede2.tacc.utexas.edu:/work/03555/lindsb/stampede2 ~/stampede/work -o volname=work
 }
 
+function mount_stamp_work {
+  umount ~/stampede/work
+  sshfs lindsb@stampede2.tacc.utexas.edu:/work/03555/lindsb/stampede2 ~/stampede/work -o volname=work
+}
+
 function unmount_rrlogin {
   umount ~/rrlogin
 }
