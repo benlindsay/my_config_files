@@ -6,9 +6,11 @@ alias jn='jupyter notebook'
 alias jnremote_comet='jupyter notebook --no-browser --port=8891'
 alias jnremote_rrlogin='jupyter notebook --no-browser --port=8889'
 alias jnremote_stamp='jupyter notebook --no-browser --port=8890'
-# https://stackoverflow.com/a/35572827/2680824
-alias nbx="jupyter nbconvert --execute --to notebook --inplace"
-alias nbxnew="jupyter nbconvert --execute --to notebook"
+# see https://stackoverflow.com/a/35572827/2680824
+# and
+# http://nbconvert.readthedocs.io/en/latest/execute_api.html#execution-arguments-traitlets
+alias nbx="jupyter nbconvert --ExecutePreprocessor.timeout=None --execute --to notebook --inplace"
+alias nbxnew="jupyter nbconvert --ExecutePreprocessor.timeout=None --execute --to notebook"
 
 # ssh
 alias alumni='ssh alumni@rrstorage.synology.me'
