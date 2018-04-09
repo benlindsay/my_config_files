@@ -2,30 +2,24 @@
 # Aliases and functions specific to rrlogin
 #------------------------------------------------------------------
 
-# module load intel-11.1
-# module load openmpi-1.4.3-intel
-# module load cmake-3.6
+# modules
+module load gcc/fftw3/mpi/double/3.3.7
+module load gcc/fftw3/openmp/double/3.3.7
 
+# aliases
 alias l.='ls -d .* --color'
+alias jnremote="jupyter notebook --no-browser --port=8888"
+alias jlremote="jupyter lab --no-browser --port=8888"
 
-# Path environment variables
-export PATH="$HOME/bin:$HOME/usr/anaconda/bin:$HOME/usr/paraview/bin:$PATH"
-export PATH="$PATH:$HOME/usr/site-packages/data_utils"
+# variables
+export PATH="$HOME/bin:$HOME/usr/anaconda/bin:$PATH"
 export PYTHONPATH="$PYTHONPATH:/home/lindsb/usr/site-packages"
-export PYTHONPATH="$PYTHONPATH:/home/lindsb/studies/film_stamp/code"
-export FFTWHOME="$HOME/usr/fftw_mpi"
-export FFTW_OPENMP="$HOME/usr/fftw_openmp"
+export FFTW_OPENMP="/opt/seas/pkg/gcc/fftw3/openmp/double/3.3.7"
+export FFTW_MPI="/opt/seas/pkg/gcc/fftw3/mpi/double/3.3.7"
+export EDITOR="/usr/bin/vim"
 
-# export PATH="$PATH:$HOME/usr/texlive/bin/x86_64-linux"
-# export INFOPATH="$HOME/usr/texlive/texmf-dist/doc/info:$INFOPATH"
-# export MANPATH="$HOME/usr/texlive/texmf-dist/doc/man:$MANPATH"
-
-export CPLUS_INCLUDE_PATH="$HOME/usr/boost/include:$CPLUS_INCLUDE_PATH"
-export LIBRARY_PATH="$HOME/usr/boost/lib:$LIBRARY_PATH"
-
-export EDITOR="$HOME/bin/vim"
-
-export PATH=$HOME/cctools/bin:$PATH
+# export CPLUS_INCLUDE_PATH="$HOME/usr/boost/include:$CPLUS_INCLUDE_PATH"
+# export LIBRARY_PATH="$HOME/usr/boost/lib:$LIBRARY_PATH"
 
 export NP_PMF_PROJ="$HOME/studies/np-pmf"
 export BCP_NP_PHASE_PROJ="$HOME/studies/bcp-np-phase"
@@ -38,13 +32,13 @@ if [ -f ~/.iterm2_shell_integration.$shell_name ]; then
   source ~/.iterm2_shell_integration.$shell_name
 fi
 
-function load_modules() {
-  module load intel-11.1
-  module load openmpi-1.4.3-intel
-  module load cmake-3.6
+# functions
+function load_modules {
+  module load gcc/fftw3/mpi/double/3.3.7
+  module load gcc/fftw3/openmp/double/3.3.7
 }
 
-function load_gcc() {
+function load_gcc {
   module load gcc/5.4
   export LD_LIBRARY_PATH="/opt/pkg/gcc/5.4/lib:$LD_LIBRARY_PATH"
   export LD_LIBRARY_PATH="/opt/pkg/gcc/5.4/lib64:$LD_LIBRARY_PATH"

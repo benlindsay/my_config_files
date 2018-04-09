@@ -7,13 +7,14 @@ if [ -f /etc/bashrc ]; then
   source /etc/bashrc
 fi
 
+source $HOME/.shell/aliases
+source $HOME/.shell/functions
+source $HOME/.shell/variables
+source $HOME/.shell_local
+
 #------------------------------------------------------------------
 # Aliases and functions specific to rrlogin
 #------------------------------------------------------------------
-
-module load intel-11.1
-module load openmpi-1.4.3-intel
-module load cmake-3.6
 
 alias ls='ls --color'
 alias l='ls'
@@ -21,32 +22,9 @@ alias ll='ls -la'
 alias l.='ls -d .* --color'
 
 # small_funcs contains small functions
-source ~/bin/small_funcs.sh
+# source ~/bin/small_funcs.sh
 
 # acd_func adds functionality to the cd command
 source ~/bin/cd_func.sh
 
-
-#------------------------------------------------------------------
-# Source aliases and functions I share with all my *nix machines
-#------------------------------------------------------------------
-test -f ~/.bashrc_shared && . $_
-
 test -f ~/.git-completion.bash && . $_
-
-function load_gcc() {
-  module load gcc/5.4
-  export LD_LIBRARY_PATH="/opt/pkg/gcc/5.4/lib:$LD_LIBRARY_PATH"
-  export LD_LIBRARY_PATH="/opt/pkg/gcc/5.4/lib64:$LD_LIBRARY_PATH"
-}
-
-function getsimdir {
-  if [ ! -z "$1" ]; then
-    jobid="$1"
-  else
-    echo "Usage: getsimdir [PBS Job ID]"
-    return 1
-  fi
-  simdir=$(qstat -f $jobid | grep PBS_O_WORKDIR | cut -d "=" -f 2)
-  echo "$simdir"
-}
