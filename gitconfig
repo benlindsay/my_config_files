@@ -17,3 +17,11 @@
 	cm = commit
 	graph = log --graph --oneline --decorate --all
 	pom = push origin master
+[color]
+        diff = auto
+        status = auto
+        branch = auto
+[color "status"]
+        changed = yellow
+        added = green
+        untracked = red
