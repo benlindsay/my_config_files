@@ -19,28 +19,6 @@ function extract {
     fi
 }
 
-
-# Takes REMOTE as argument, i.e. username@hostname
-function jnlocal {
-  # capture REMOTE from argument
-  if [ ! -z "$1" ]; then
-    REMOTE="$1"
-    # remove colon and anything after colon if there's a colon
-    REMOTE=${REMOTE%:*}
-  else
-    REMOTE="lindsb@rrlogin.seas.upenn.edu"
-  fi
-  # capture port from argument
-  if [ ! -z "$2" ]; then
-    PORT="$2"
-  else
-    PORT="8889"
-  fi
-  echo "Copy the following address into your browser:"
-  echo "http://localhost:8888"
-  ssh -Y -N -L "localhost:8888:localhost:$PORT" "$REMOTE"
-}
-
 function mount_rrlogin {
   umount ~/rrlogin
   sshfs lindsb@rrlogin.seas.upenn.edu:/home/lindsb ~/rrlogin -o volname=rrlogin
