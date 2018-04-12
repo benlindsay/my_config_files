@@ -35,5 +35,3 @@ export BCP_NP_PHASE_PROJ="$WORK/bcp-np-phase"
 export VDW_PROJ="$WORK/vdw-interactions"
 export FILM_STAMP_PROJ="$WORK/film-stamp"
 export EDITOR='vim'
-
-alias sq='squeue -o "%.9i %.6P %.25j %.4u %.2t %.10M %.3D %.17R" -u lindsb'

@@ -39,6 +39,7 @@ alias vi='vim'
 alias docker_mpi='docker run --rm -it -v $(pwd):/project nlknguyen/alpine-mpich'
 alias .='source'
 alias shuf='gshuf'
+alias sq='squeue -o "%.9i %.6P %.25j %.4u %.2t %.10M %.3D %.17R" -u lindsb'
 
 # Git short hash
 alias gda='git describe --always'

@@ -10,7 +10,6 @@ module load gcc/fftw3/openmp/double/3.3.7
 alias l.='ls -d .* --color'
 alias jnremote="jupyter notebook --no-browser --port=8888"
 alias jlremote="jupyter lab --no-browser --port=8888"
-alias sq='squeue -o "%.9i %.6P %.25j %.4u %.2t %.10M %.3D %.17R" -u lindsb'
 
 # variables
 export PATH="$HOME/bin:$HOME/usr/anaconda/bin:$PATH"
