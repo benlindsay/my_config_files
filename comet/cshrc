@@ -1,0 +1,3 @@
+unsetenv FPATH
+setenv SHELL /share/apps/compute/zsh/bin/zsh
+exec /share/apps/compute/zsh/bin/zsh -l
