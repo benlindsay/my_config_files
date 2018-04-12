@@ -128,6 +128,8 @@ endif
 " Set filetype for custom dotfiles I have
 autocmd BufNewFile,BufRead *shell_local set filetype=sh
 autocmd BufNewFile,BufRead *shell/{aliases,functions,input,variables} set filetype=sh
+autocmd BufNewFile,BufRead *bash_profile set filetype=sh
+autocmd BufNewFile,BufRead *bashrc set filetype=sh
 
 " Set default color scheme
 colorscheme desert
