@@ -13,8 +13,5 @@ source $HOME/.shell/variables
 # Source local config file
 source $HOME/.shell_local
 
-# acd_func adds functionality to the cd command
-source ~/bin/cd_func.sh
-
 # load modules
 module load fftw/3.3.4
