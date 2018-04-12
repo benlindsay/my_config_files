@@ -16,6 +16,9 @@ export PYTHONPATH="$PYTHONPATH:/home/lindsb/usr/site-packages"
 export FFTW_MPI="/opt/fftw/3.3.4/intel/mvapich2_ib"
 export FFTW_OPENMP="/opt/fftw/3.3.4/intel/mvapich2_ib"
 export VDW_PROJ="$HOME/studies/vdw-interactions"
+export SCRATCH="/oasis/scratch/comet/$USER/temp_project"
+
+alias cds="cd $SCRATCH"
 
 # iterm2 stuff
 # export iterm2_hostname=rrlogin.seas.upenn.edu
