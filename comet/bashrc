@@ -7,6 +7,11 @@ if [ -f /etc/bashrc ]; then
   source /etc/bashrc
 fi
 
+source $HOME/.shell/aliases
+source $HOME/.shell/functions
+source $HOME/.shell/variables
+source $HOME/.shell_local
+
 #------------------------------------------------------------------
 # Aliases and functions specific to comet
 #------------------------------------------------------------------
@@ -16,16 +21,8 @@ alias l='ls'
 alias ll='ls -la'
 alias l.='ls -d .* --color'
 
-# small_funcs contains small functions
-source ~/bin/small_funcs.sh
-
 # acd_func adds functionality to the cd command
 source ~/bin/cd_func.sh
 
-
-#------------------------------------------------------------------
-# Source aliases and functions I share with all my *nix machines
-#------------------------------------------------------------------
-test -f ~/.bashrc_shared && . $_
-
+# git completion
 test -f ~/.git-completion.bash && . $_

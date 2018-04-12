@@ -1,0 +1,9 @@
+# Path environment variables
+export PATH="$HOME/bin:$HOME/usr/paraview/bin:$HOME/usr/miniconda3/bin:$PATH"
+export PYTHONPATH="$PYTHONPATH:/home/lindsb/usr/site-packages"
+export FFTWHOME="$HOME/usr/fftw_mpi"
+export FFTW_OPENMP="$HOME/usr/fftw_openmp"
+
+# iterm2 stuff
+# export iterm2_hostname=rrlogin.seas.upenn.edu
+test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"

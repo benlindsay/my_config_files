@@ -197,22 +197,22 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.vim/bundle')
-Plug 'LaTeX-Box-Team/LaTeX-Box'         " LaTeX stuff
-Plug 'tmhedberg/matchit'                " Improved matching for % key
-Plug 'scrooloose/nerdtree'              " Improved file navigation
-Plug 'Townk/vim-autoclose'              " Automatically close pairs
-Plug 'alvan/vim-closetag'               " Like Autoclose for html tags
-Plug 'tpope/vim-fugitive'               " Use Git from within Vim
-Plug 'terryma/vim-multiple-cursors'     " Select and edit multiple words
-Plug 'tpope/vim-surround'               " Surround region with character pair
+" Plug 'LaTeX-Box-Team/LaTeX-Box'         " LaTeX stuff
+" Plug 'tmhedberg/matchit'                " Improved matching for % key
+" Plug 'scrooloose/nerdtree'              " Improved file navigation
+" Plug 'Townk/vim-autoclose'              " Automatically close pairs
+" Plug 'alvan/vim-closetag'               " Like Autoclose for html tags
+" Plug 'tpope/vim-fugitive'               " Use Git from within Vim
+" Plug 'terryma/vim-multiple-cursors'     " Select and edit multiple words
+" Plug 'tpope/vim-surround'               " Surround region with character pair
 Plug 'tpope/vim-commentary'             " Comment lines using gc<object>
-Plug 'ConradIrwin/vim-bracketed-paste'  " Seamless pasting from clipboard
-Plug 'MarcWeber/vim-addon-mw-utils'     " Required for snipmate
-Plug 'tomtom/tlib_vim'                  " Required for snipmate
-Plug 'garbas/vim-snipmate'              " Framwork for inserting snippets
-Plug 'benlindsay/vim-snippets'          " Predefined snippets for snipmate
-Plug 'noahfrederick/vim-skeleton'       " Loads templates by file extension
-Plug 'jamessan/vim-gnupg'               " Edit gpg encrypted file
+" Plug 'ConradIrwin/vim-bracketed-paste'  " Seamless pasting from clipboard
+" Plug 'MarcWeber/vim-addon-mw-utils'     " Required for snipmate
+" Plug 'tomtom/tlib_vim'                  " Required for snipmate
+" Plug 'garbas/vim-snipmate'              " Framwork for inserting snippets
+" Plug 'benlindsay/vim-snippets'          " Predefined snippets for snipmate
+" Plug 'noahfrederick/vim-skeleton'       " Loads templates by file extension
+" Plug 'jamessan/vim-gnupg'               " Edit gpg encrypted file
 " Get other plugins and commands defined locally
 if !empty(glob("~/.vim_local"))
   source ~/.vim_local
