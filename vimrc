@@ -125,6 +125,12 @@ if &t_Co > 2 || has("gui_running")
   set hlsearch
 endif
 
+" Set filetype for custom dotfiles I have
+autocmd BufNewFile,BufRead *shell_local set filetype=sh
+autocmd BufNewFile,BufRead *shell/{aliases,functions,input,variables} set filetype=sh
+autocmd BufNewFile,BufRead *bash_profile set filetype=sh
+autocmd BufNewFile,BufRead *bashrc set filetype=sh
+
 " Set default color scheme
 colorscheme desert
 
@@ -191,6 +197,9 @@ if empty(glob('~/.vim/autoload/plug.vim'))
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   autocmd VimEnter * PlugInstall | source $MYVIMRC
 endif
+
+" Threading didn't work on Comet for some reason, and this fixed that:
+let g:plug_threads=1
 
 call plug#begin('~/.vim/bundle')
 Plug 'LaTeX-Box-Team/LaTeX-Box'         " LaTeX stuff

@@ -19,28 +19,6 @@ function extract {
     fi
 }
 
-
-# Takes REMOTE as argument, i.e. username@hostname
-function jnlocal {
-  # capture REMOTE from argument
-  if [ ! -z "$1" ]; then
-    REMOTE="$1"
-    # remove colon and anything after colon if there's a colon
-    REMOTE=${REMOTE%:*}
-  else
-    REMOTE="lindsb@rrlogin.seas.upenn.edu"
-  fi
-  # capture port from argument
-  if [ ! -z "$2" ]; then
-    PORT="$2"
-  else
-    PORT="8889"
-  fi
-  echo "Copy the following address into your browser:"
-  echo "http://localhost:8888"
-  ssh -Y -N -L "localhost:8888:localhost:$PORT" "$REMOTE"
-}
-
 function mount_rrlogin {
   umount ~/rrlogin
   sshfs lindsb@rrlogin.seas.upenn.edu:/home/lindsb ~/rrlogin -o volname=rrlogin
@@ -49,7 +27,12 @@ function mount_rrlogin {
 function mount_stamp {
   umount ~/stampede/home ~/stampede/work
   sshfs lindsb@stampede2.tacc.utexas.edu:/home1/03555/lindsb ~/stampede/home -o volname=home
-  sshfs lindsb@stampede2.tacc.utexas.edu:/work/03555/lindsb ~/stampede/work -o volname=work
+  sshfs lindsb@stampede2.tacc.utexas.edu:/work/03555/lindsb/stampede2 ~/stampede/work -o volname=work
+}
+
+function mount_stamp_work {
+  umount ~/stampede/work
+  sshfs lindsb@stampede2.tacc.utexas.edu:/work/03555/lindsb/stampede2 ~/stampede/work -o volname=work
 }
 
 function unmount_rrlogin {
@@ -66,32 +49,87 @@ function passtail {
 }
 
 function passgen {
-  if [ $# -gt 0 ]; then
-    n_words=$1
-  else
-    n_words=3
-  fi
+
+  capitalize=true
+  add_special=true
+  n_words=3
+  re='^[0-9]+$'
+  for arg in $@; do
+    if [ "$arg" = '--nocap' ]; then
+      capitalize=false
+    elif [ "$arg" = '--nospecial' ]; then
+      add_special=false
+    elif [[ "$arg" =~ "$re" ]] ; then
+      n_words="$arg"
+    fi
+  done
 
   SPECIAL_ARRAY=('!' '@' '#' '$' '%' '^' '&' '*')
   first=true
 
   for word in $(gshuf -n$n_words /usr/share/dict/words); do
-    cap_word=$(echo $word | awk '{print toupper(substr($0,1,1))""substr($0,2)}')
+    if $capitalize; then
+      next_word=$(echo $word | awk '{print toupper(substr($0,1,1))""substr($0,2)}')
+    else
+      next_word="$word"
+    fi
     if $first; then
-      password="$cap_word"
+      password="$next_word"
       first=false
     else
-      rand=$(( (RANDOM % 8) + 1 ))
-      rand_special="${SPECIAL_ARRAY[$rand]}"
-      password="$password$rand_special$cap_word"
+      if $add_special; then
+        rand=$(( (RANDOM % 8) + 1 ))
+        rand_special="${SPECIAL_ARRAY[$rand]}"
+        password="$password$rand_special$next_word"
+      else
+        password="$password$next_word"
+      fi
     fi
   done
 
   echo "$password"
+
 }
 
 function macmount {
   sshfs -o volname=$2 $1 $2
+}
+
+# "round" was modified from
+# http://stempell.com/2009/08/rechnen-in-bash/
+# It allows you to evaluate and round math expressions with
+# floating point numbers
+function round {
+  # Make sure only 1 or 2 variables passed
+  if [ "$#" -gt 2 ] || [ "$#" == 0 ] ; then
+    echo 'Usage: round "expr" scale. Default scale is 0'
+    return 1
+  elif [ "$#" == 1 ] ; then
+    # If no scale was passed, set scale to 0
+    set -- "${@:1}" "0"
+  fi
+
+  # Make sure scale >= 0
+  if [ "$2" -lt 0 ] ; then
+    echo "Scale must be >= 0"
+    return 1
+  fi
+
+  # Evaluate
+  if [ "$2" == 0 ] ; then
+    echo $(printf %.0f $(echo "scale=0;($1+0.5)/1" | bc))
+  else
+    echo $(printf %.$2f $(echo "scale=$2;(((10^$2)*($1))+0.5)/(10^$2)" | bc))
+  fi
+}
+
+# Shortcut for executing a command within each subdirectory
+function all {
+  for d in */; do
+    cd $d
+    ("$1")
+    cd -
+  done
 }
 
 # Changes all files in current directory of the form w*.all to w*.res

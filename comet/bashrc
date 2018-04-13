@@ -1,31 +1,17 @@
 # .bashrc
 
-#------------------------------------------------------------------
-# Source global definitions
-#------------------------------------------------------------------
+# Source system bashrc file
 if [ -f /etc/bashrc ]; then
   source /etc/bashrc
 fi
 
-#------------------------------------------------------------------
-# Aliases and functions specific to comet
-#------------------------------------------------------------------
+# Source shared config files
+source $HOME/.shell/aliases
+source $HOME/.shell/functions
+source $HOME/.shell/variables
 
-alias ls='ls --color'
-alias l='ls'
-alias ll='ls -la'
-alias l.='ls -d .* --color'
+# Source local config file
+source $HOME/.shell_local
 
-# small_funcs contains small functions
-source ~/bin/small_funcs.sh
-
-# acd_func adds functionality to the cd command
-source ~/bin/cd_func.sh
-
-
-#------------------------------------------------------------------
-# Source aliases and functions I share with all my *nix machines
-#------------------------------------------------------------------
-test -f ~/.bashrc_shared && . $_
-
-test -f ~/.git-completion.bash && . $_
+# load modules
+module load fftw/3.3.4

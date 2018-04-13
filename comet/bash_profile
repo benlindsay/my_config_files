@@ -1,25 +1,28 @@
 # .bash_profile
 
-# Get the aliases and functions
-if [ -f ~/.bashrc ]; then
-  . ~/.bashrc
+zsh_dir=/share/apps/compute/zsh/bin
+export PATH=$zsh_dir:$PATH
+
+if [ -z $PS1 ]; then
+  source $HOME/.bashrc
+else
+  read -p "Use zsh? (y/n) " -n 1 -r
+  if [[ $REPLY =~ ^[Yy]$ ]]; then
+    echo
+    echo "Good choice! zsh it is."
+    export SHELL=/bin/csh
+    exec /bin/csh -l
+  else
+    echo
+    echo "Bummer. Here's your bash shell."
+    source $HOME/.bashrc
+
+    # Color and format terminal prompt Courtesy of
+    # osxdaily.com/2013/02/05/improve-terminal-appearance-mac-os-x/
+    export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[36;1m\]\W\[\033[m\]\$ "
+
+    # cd_func adds functionality to the cd command
+    source ~/bin/cd_func.sh
+
+  fi
 fi
-
-# Get environment variables that are common to all my *nix machines
-if [ -f ~/.bash_profile_shared ]; then
-  . ~/.bash_profile_shared
-fi
-
-# Path environment variables
-export PATH="$HOME/bin:$HOME/usr/paraview/bin:$HOME/usr/miniconda3/bin:$PATH"
-export PYTHONPATH="$PYTHONPATH:/home/lindsb/usr/site-packages"
-export FFTWHOME="$HOME/usr/fftw_mpi"
-export FFTW_OPENMP="$HOME/usr/fftw_openmp"
-
-# Color and format terminal prompt
-# Courtesy of osxdaily.com/2013/02/05/improve-terminal-appearance-mac-os-x/
-export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[36;1m\]\W\[\033[m\]\$ "
-
-# iterm2 stuff
-export iterm2_hostname=rrlogin.seas.upenn.edu
-test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"

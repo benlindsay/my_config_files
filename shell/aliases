@@ -3,9 +3,17 @@
 
 # Jupyter
 alias jn='jupyter notebook'
+alias jl='jupyter lab'
 alias jnremote_comet='jupyter notebook --no-browser --port=8891'
-alias jnremote_rrlogin='jupyter notebook --no-browser --port=8889'
 alias jnremote_stamp='jupyter notebook --no-browser --port=8890'
+alias jnlocal="echo 'URL to copy to your browser:'; echo 'http://localhost:8888'; ssh -Y -N -L 'localhost:8888:localhost:8888' 'lindsb@rrlogin.seas.upenn.edu'"
+
+# see https://stackoverflow.com/a/35572827/2680824
+# and
+# http://nbconvert.readthedocs.io/en/latest/execute_api.html#execution-arguments-traitlets
+alias nbx="jupyter nbconvert --ExecutePreprocessor.timeout=None --execute --to notebook --inplace"
+alias nbxnew="jupyter nbconvert --ExecutePreprocessor.timeout=None --execute --to notebook"
+
 
 # ssh
 alias alumni='ssh alumni@rrstorage.synology.me'
@@ -31,6 +39,7 @@ alias vi='vim'
 alias docker_mpi='docker run --rm -it -v $(pwd):/project nlknguyen/alpine-mpich'
 alias .='source'
 alias shuf='gshuf'
+alias sq='squeue -o "%.9i %.6P %.25j %.4u %.2t %.10M %.3D %.17R" -u lindsb'
 
 # Git short hash
 alias gda='git describe --always'

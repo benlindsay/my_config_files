@@ -25,3 +25,5 @@
         changed = yellow
         added = green
         untracked = red
+[http]
+	sslVersion = tlsv1
