@@ -12,6 +12,3 @@ source $HOME/.shell/variables
 
 # Source local config file
 source $HOME/.shell_local
-
-# load modules
-module load fftw/3.3.4
