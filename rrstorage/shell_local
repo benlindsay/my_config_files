@@ -1,0 +1,2 @@
+alias screen='TERM=xterm screen'
+export PATH="/var/services/homes/lindsb/miniconda3/bin:$PATH"

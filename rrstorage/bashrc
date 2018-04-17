@@ -1,0 +1,30 @@
+# .bashrc
+
+#------------------------------------------------------------------
+# Source global definitions
+#------------------------------------------------------------------
+if [ -f /etc/bashrc ]; then
+  source /etc/bashrc
+fi
+
+source $HOME/.shell/aliases
+source $HOME/.shell/functions
+source $HOME/.shell/variables
+source $HOME/.shell_local
+
+#------------------------------------------------------------------
+# Aliases and functions specific to rrlogin
+#------------------------------------------------------------------
+
+alias ls='ls --color'
+alias l='ls'
+alias ll='ls -la'
+alias l.='ls -d .* --color'
+
+# small_funcs contains small functions
+# source ~/bin/small_funcs.sh
+
+# acd_func adds functionality to the cd command
+source ~/bin/cd_func.sh
+
+test -f ~/.git-completion.bash && . $_
