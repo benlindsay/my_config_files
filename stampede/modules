@@ -1,4 +1,5 @@
 module load git
+module load vmd
 
 # The intel module is a prerequisite for the fftw3 module
 module load intel
