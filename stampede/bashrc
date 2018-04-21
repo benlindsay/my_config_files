@@ -48,6 +48,11 @@ if [ -z "$__BASHRC_SOURCED__" -a "$ENVIRONMENT" != BATCH ]; then
     source ~/.bashrc_shared
   fi
 
+  source ~/.shell/variables
+  source ~/.shell/aliases
+  source ~/.shell/functions
+  source ~/.shell_local
+
   # Aliases specific to stampede
   alias ls='ls --color'
   alias l='ls'
@@ -55,24 +60,7 @@ if [ -z "$__BASHRC_SOURCED__" -a "$ENVIRONMENT" != BATCH ]; then
   alias l.='ls -d .* --color'
 
   # Custom functions I want available all the time
-  source $HOME/bin/small_funcs.sh
   source $HOME/bin/cd_func.sh
-  test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
-
-  function getsimdir {
-    if [ ! -z "$1" ]; then
-      jobid="$1"
-    else
-      echo "Usage: getsimdir [Slurm Job ID]"
-      return 1
-    fi
-    simdir=$(scontrol show job $jobid | grep WorkDir | cut -d "=" -f 2)
-    echo "$simdir"
-  }
-
-  # Change command line editing from emacs(default) to vi style
-  # set -o vi
-
 fi
 
 ############
@@ -89,33 +77,6 @@ if [ -z "$__PERSONAL_PATH__" ]; then
   ###################################################################
   # **** PLACE Environment Variables including PATH here.        ****
   ###################################################################
-
-  export PATH=$HOME/bin:$HOME/local/miniconda3/bin:$PATH
-
-  # .../paraview/.../site-packages and .../paraview/.../site-packages/vtk
-  # are necessary in order to use the paraview.simple python module. The
-  # .../site-packages path seems to already be there, but it doesn't hurt
-  # to add it again just to make sure.
-  tmp1=/opt/apps/intel15/mvapich2_2_1
-  tmp1=$tmp1/paraview/4.3.1/lib/paraview-4.3/site-packages
-  export PYTHONPATH=$tmp1:$tmp1/vtk:$PYTHONPATH
-
-  # Add my custom python module directory to PYTHONPATH
-  export PYTHONPATH=$HOME/usr/site-packages:$PYTHONPATH
-
-  # Variable to help with git hooks and such
-  export HOSTNAME_SHORT="stampede"
-
-  export NP_PMF_PROJ="/work/03555/lindsb/np-pmf"
-  export BCP_NP_PHASE_PROJ="$WORK/bcp-np-phase"
-
-  if [ -f ~/.bash_profile_shared ]; then
-    source ~/.bash_profile_shared
-  fi
-
-  # Set default editor. This helps with git, crontab, and other programs when
-  # they let you edit files via an editor
-  export EDITOR='vim'
 
 fi
 
@@ -171,7 +132,6 @@ fi
 
 # alias m="more"
 alias bls='/bin/ls'   # handy alias for listing a large directory.
-alias sq='squeue -o "%.9i %.6P %.25j %.4u %.2t %.10M %.3D %.17R" -u lindsb'
 
 ##########
 # Umask
