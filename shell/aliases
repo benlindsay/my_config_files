@@ -6,7 +6,7 @@ alias jn='jupyter notebook'
 alias jl='jupyter lab'
 alias jnremote_comet='jupyter notebook --no-browser --port=8891'
 alias jnremote_stamp='jupyter notebook --no-browser --port=8890'
-alias jnlocal="echo 'URL to copy to your browser:'; echo 'http://localhost:8888'; ssh -Y -N -L 'localhost:8888:localhost:8888' 'lindsb@rrlogin.seas.upenn.edu'"
+# alias jnlocal="echo 'URL to copy to your browser:'; echo 'http://localhost:8888'; ssh -Y -N -L 'localhost:8888:localhost:8888' 'lindsb@rrlogin.seas.upenn.edu'"
 
 # see https://stackoverflow.com/a/35572827/2680824
 # and

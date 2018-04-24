@@ -19,6 +19,15 @@ function extract {
     fi
 }
 
+function jnlocal {
+  url=$(ssh lindsb@rrlogin.seas.upenn.edu \
+          '~/usr/anaconda/bin/jupyter notebook list' \
+          | grep http | awk '{print $1}')
+  echo "URL to copy to your browser:"
+  echo "$url"
+  ssh -Y -N -L 'localhost:8888:localhost:8888' 'lindsb@rrlogin.seas.upenn.edu'
+}
+
 function mount_rrlogin {
   umount ~/rrlogin
   sshfs lindsb@rrlogin.seas.upenn.edu:/home/lindsb ~/rrlogin -o volname=rrlogin
@@ -35,12 +44,33 @@ function mount_stamp_work {
   sshfs lindsb@stampede2.tacc.utexas.edu:/work/03555/lindsb/stampede2 ~/stampede/work -o volname=work
 }
 
+function mount_comet {
+  umount ~/comet/home ~/comet/scratch
+  sshfs lindsb@comet.sdsc.xsede.org:/home/lindsb ~/comet/home -o volname=home
+  sshfs lindsb@comet.sdsc.xsede.org:/oasis/scratch/comet/lindsb/temp_project ~/comet/scratch -o volname=scratch
+}
+
+function mount_comet_scratch {
+  umount ~/comet/scratch
+  sshfs lindsb@comet.sdsc.xsede.org:/oasis/scratch/comet/lindsb/temp_project ~/comet/scratch -o volname=scratch
+}
+
 function unmount_rrlogin {
   umount ~/rrlogin
 }
 
 function unmount_stamp {
   umount ~/stampede/home ~/stampede/work
+}
+
+function unmount_comet {
+  umount ~/comet/home ~/comet/scratch
+}
+
+function unmount_all {
+  unmount_rrlogin
+  unmount_stamp
+  unmount_comet
 }
 
 function passtail {

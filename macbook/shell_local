@@ -23,6 +23,7 @@ export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/miniconda/bin:$PATH"
 
 export PYTHONPATH="$HOME/.local/site-packages"
+export BCP_NP_PHASE_PROJ="$HOME/stampede/work/bcp-np-phase"
 
 # iterm2 stuff
 export iterm2_hostname=rrlogin.seas.upenn.edu
