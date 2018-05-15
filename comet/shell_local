@@ -33,3 +33,14 @@ fi
 
 # load modules
 module load fftw/3.3.4
+
+function getsimdir {
+  if [ ! -z "$1" ]; then
+    jobid="$1"
+  else
+    echo "Usage: getsimdir [Slurm Job ID]"
+    return 1
+  fi
+  simdir=$(scontrol show job $jobid | grep WorkDir | cut -d "=" -f 2)
+  echo "$simdir"
+}
