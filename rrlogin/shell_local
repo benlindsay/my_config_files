@@ -48,9 +48,21 @@ function getsimdir {
   if [ ! -z "$1" ]; then
     jobid="$1"
   else
-    echo "Usage: getsimdir [PBS Job ID]"
+    echo "Usage: getsimdir [Slurm Job ID]"
     return 1
   fi
-  simdir=$(qstat -f $jobid | grep PBS_O_WORKDIR | cut -d "=" -f 2)
+  simdir=$(scontrol show job $jobid | grep WorkDir | cut -d "=" -f 2)
   echo "$simdir"
 }
+
+function print_usage {
+  echo "Nodes:"
+  echo -n "  "
+  sinfo | grep p_rrig | awk '{print $5": "$4"/24"}' | tr "\n" "\t"
+  echo
+  echo "CPUs:"
+  echo -n "  "
+  sinfo -o "%C" | tail -1 | tr "/" " " | awk '{print "alloc: "$1"/288\tidle: "$2"/288\tother: "$3"/288"}'
+}
+
+alias showq='showq; echo; print_usage'
