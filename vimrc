@@ -219,6 +219,7 @@ Plug 'garbas/vim-snipmate'              " Framwork for inserting snippets
 Plug 'benlindsay/vim-snippets'          " Predefined snippets for snipmate
 Plug 'noahfrederick/vim-skeleton'       " Loads templates by file extension
 Plug 'jamessan/vim-gnupg'               " Edit gpg encrypted file
+Plug 'rhysd/vim-clang-format'           " Clang-format for c family code
 " Get other plugins and commands defined locally
 if !empty(glob("~/.vim_local"))
   source ~/.vim_local
@@ -338,6 +339,19 @@ endfunction
 function! g:skeleton_replacements.GUARD()
   return substitute(toupper(expand("%:t")), "\\.", "_", "g")
 endfunction
+
+" ------------------------- VIM-CLANG-FORMAT -------------------------------- "
+
+" map to <Leader>cf in C++ code
+autocmd FileType c,cpp,h,hpp nnoremap <buffer><Leader>cf :<C-u>ClangFormat<CR>
+autocmd FileType c,cpp,h,hpp vnoremap <buffer><Leader>cf :ClangFormat<CR>
+
+" Toggle auto formatting:
+nmap <Leader>C :ClangFormatAutoToggle<CR>
+
+" Auto-enabling auto-formatting
+autocmd FileType c,cpp,h,hpp ClangFormatAutoEnable
+
 
 " ================= CUSTOM LINE NUMBER TOGGLING BEHAVIOR ==================== "
 
