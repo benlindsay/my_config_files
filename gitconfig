@@ -9,14 +9,15 @@
 	editor = vim
 	excludesfile = ~/.gitignore_global
 [alias]
-	unstage = reset HEAD --
-	st = status
-	co = checkout
 	br = branch
-	last = log -1 HEAD
 	cm = commit
+	co = checkout
 	graph = log --graph --oneline --decorate --all
+	last = log -1 HEAD
 	pom = push origin master
+        root = rev-parse --show-toplevel
+	st = status
+	unstage = reset HEAD --
 [color]
         diff = auto
         status = auto
