@@ -350,7 +350,7 @@ autocmd FileType c,cpp,h,hpp vnoremap <buffer><Leader>cf :ClangFormat<CR>
 nmap <Leader>C :ClangFormatAutoToggle<CR>
 
 " Auto-enabling auto-formatting
-autocmd FileType c,cpp,h,hpp ClangFormatAutoEnable
+" autocmd FileType c,cpp,h,hpp ClangFormatAutoEnable
 
 
 " ================= CUSTOM LINE NUMBER TOGGLING BEHAVIOR ==================== "
