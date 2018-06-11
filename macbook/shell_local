@@ -1,4 +1,6 @@
 alias vmd='/Applications/VMD-1.9.2.app/Contents/MacOS/startup.command'
+alias ovito='/Applications/Ovito.app/Contents/MacOS/ovito'
+alias ovitos='/Applications/Ovito.app/Contents/MacOS/ovitos'
 alias k3='source activate kaggle3'
 alias spark='docker run -v $HOME/Jupyter:/home/jovyan/work -it -p 8888:8888 jupyter/all-spark-notebook'
 alias chrome='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome'
@@ -19,10 +21,10 @@ alias myvm2='eval $(docker-machine env myvm2)'
 
 # Modify PATH
 export PATH="/usr/local/bin:$PATH"
-export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/miniconda/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
 
-export PYTHONPATH="$HOME/.local/site-packages"
+export PYTHONPATH="$HOME/.local/site-packages:$PYTHONPATH"
 export BCP_NP_PHASE_PROJ="$HOME/stampede/work/bcp-np-phase"
 
 # iterm2 stuff
