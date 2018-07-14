@@ -1,0 +1,9 @@
+autoload -U compinit
+compinit
+
+#allow tab completion in the middle of a word
+setopt COMPLETE_IN_WORD
+
+export PATH=/home/lindsb/local/miniconda/bin:$PATH
+
+alias cds="cd $SCRATCH"
