@@ -17,6 +17,7 @@ alias nbxnew="jupyter nbconvert --ExecutePreprocessor.timeout=None --execute --t
 
 # ssh
 alias alumni='ssh alumni@rrstorage.synology.me'
+alias bridges='ssh -Y lindsb@bridges.psc.xsede.org'
 alias comet='ssh -Y lindsb@comet.sdsc.xsede.org'
 alias eniac='ssh -Y lindsb@eniac.seas.upenn.edu'
 alias fsl='ssh -Y bjlinds@ssh.fsl.byu.edu'

@@ -1,5 +1,6 @@
 # Variables to facilitate scp file transfers
 export RRLOGIN="lindsb@rrlogin.seas.upenn.edu"
+export BRIDGES="lindsb@bridges.psc.xsede.org"
 export COMET="lindsb@comet.sdsc.xsede.org"
 export STAMPH="lindsb@stampede2.tacc.utexas.edu"
 export STAMPW="lindsb@stampede2.tacc.utexas.edu:/work/03555/lindsb/stampede2"
