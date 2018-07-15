@@ -26,6 +26,7 @@ export EDITOR="/usr/bin/vim"
 export NP_PMF_PROJ="$HOME/studies/np-pmf"
 export BCP_NP_PHASE_PROJ="$HOME/studies/bcp-np-phase"
 export VDW_PROJ="$HOME/studies/vdw-interactions"
+export DMFT_ADS_PROJ="$HOME/studies/dmft-adsorbing-polymer"
 
 # iterm2 stuff
 export iterm2_hostname=rrlogin.seas.upenn.edu
