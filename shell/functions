@@ -74,22 +74,36 @@ function mount_comet_scratch {
   sshfs lindsb@comet.sdsc.xsede.org:/oasis/scratch/comet/lindsb/temp_project ~/comet/scratch -o volname=scratch
 }
 
+function mount_bridges {
+  umount ~/bridges/home ~/bridges/scratch
+  sshfs lindsb@bridges.psc.xsede.org:/home/lindsb ~/bridges/home -o volname=home
+  sshfs lindsb@bridges.psc.xsede.org:/pylon5/mr5fpop/lindsb ~/bridges/scratch -o volname=scratch
+}
+
 function unmount_rrlogin {
-  umount ~/rrlogin
+  sudo diskutil unmount force ~/rrlogin
 }
 
 function unmount_stamp {
-  umount ~/stampede/home ~/stampede/work
+  sudo diskutil unmount force ~/stampede/home
+  sudo diskutil unmount force ~/stampede/work
 }
 
 function unmount_comet {
-  umount ~/comet/home ~/comet/scratch
+  sudo diskutil unmount force ~/comet/home
+  sudo diskutil unmount force ~/comet/scratch
+}
+
+function unmount_bridges {
+  sudo diskutil unmount force ~/bridges/home
+  sudo diskutil unmount force ~/bridges/scratch
 }
 
 function unmount_all {
   unmount_rrlogin
   unmount_stamp
   unmount_comet
+  unmount_bridges
 }
 
 function passtail {
