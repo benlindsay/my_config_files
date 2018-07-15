@@ -1,6 +1,7 @@
 alias vmd='/Applications/VMD-1.9.2.app/Contents/MacOS/startup.command'
-alias ovito='/Applications/Ovito.app/Contents/MacOS/ovito'
-alias ovitos='/Applications/Ovito.app/Contents/MacOS/ovitos'
+# alias ovito='/Applications/Ovito.app/Contents/MacOS/ovito'
+# alias ovitos='/Applications/Ovito.app/Contents/MacOS/ovitos'
+export PATH="/Applications/Ovito.app/Contents/MacOS:$PATH"
 alias k3='source activate kaggle3'
 alias spark='docker run -v $HOME/Jupyter:/home/jovyan/work -it -p 8888:8888 jupyter/all-spark-notebook'
 alias chrome='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome'
