@@ -1,3 +1,5 @@
 alias screen='TERM=xterm screen'
 alias cdb="cd /volume1/backup/$USER/rrbackup"
+export PATH="/usr/local/bin:$PATH"
+export PATH="/opt/bin:$PATH"
 export PATH="/var/services/homes/lindsb/miniconda3/bin:$PATH"
