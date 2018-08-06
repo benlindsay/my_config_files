@@ -2,6 +2,8 @@ alias k3='source activate kaggle3'
 alias jnremote='echo "Copy the following address into your browser:"; echo "http://localhost:8888"; ssh -N -L localhost:8888:localhost:8889 lindsb@rrlogin.seas.upenn.edu'
 
 
+export PATH="/Applications/Ovito.app/Contents/MacOS:$PATH"
+
 # /usr/local stuff Requested by homebrew
 export PATH="/usr/local/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
