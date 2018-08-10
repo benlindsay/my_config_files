@@ -34,6 +34,8 @@ shell_name=$(basename $SHELL)
 if [ -f ~/.iterm2_shell_integration.$shell_name ]; then
   source ~/.iterm2_shell_integration.$shell_name
 fi
+# added by travis gem
+[ -f $HOME/.travis/travis.sh ] && source $HOME/.travis/travis.sh
 
 autoload -Uz compinit && compinit -i
 
