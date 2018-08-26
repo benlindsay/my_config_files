@@ -8,4 +8,6 @@ export PATH=/home/lindsb/local/miniconda/bin:$PATH
 
 export DMFT_ADS_PROJ="$SCRATCH/dmft-adsorbing-polymer"
 
+module load fftw3
+
 alias cds="cd $SCRATCH"
