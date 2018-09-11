@@ -37,6 +37,14 @@ fi
 # added by travis gem
 [ -f $HOME/.travis/travis.sh ] && source $HOME/.travis/travis.sh
 
+conda_autoenv_path=$(which conda_autoenv.sh)
+if [ -f $conda_autoenv_path ]; then
+  source $conda_autoenv_path
+  if [[ $(basename $SHELL) == zsh ]]; then
+    precmd() { eval "$PROMPT_COMMAND" }
+  fi
+fi
+
 autoload -Uz compinit && compinit -i
 
 # if [ -f /usr/local/etc/bash_completion.d/passtail ]; then
