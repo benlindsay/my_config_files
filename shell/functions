@@ -49,7 +49,7 @@ function jnlocal {
 
 function mount_rrlogin {
   umount ~/rrlogin
-  sshfs lindsb@rrlogin.seas.upenn.edu:/home/lindsb ~/rrlogin -o volname=rrlogin
+  sshfs lindsb@rrlogin.seas.upenn.edu:/home/lindsb ~/rrlogin -o volname=rrlogin,reconnect
 }
 
 function mount_stamp {
