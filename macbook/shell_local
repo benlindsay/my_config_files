@@ -22,7 +22,6 @@ alias myvm2='eval $(docker-machine env myvm2)'
 
 # Modify PATH
 export PATH="/usr/local/bin:$PATH"
-export PATH="$HOME/miniconda/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 
 export PYTHONPATH="$HOME/.local/site-packages:$PYTHONPATH"
