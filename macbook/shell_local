@@ -28,6 +28,10 @@ export PATH="$HOME/.local/bin:$PATH"
 export PYTHONPATH="$HOME/.local/site-packages:$PYTHONPATH"
 export BCP_NP_PHASE_PROJ="$HOME/stampede/work/bcp-np-phase"
 
+if [ -f ~/miniconda/etc/profile.d/conda.sh ]; then
+  . ~/miniconda/etc/profile.d/conda.sh
+fi
+
 # iterm2 stuff
 export iterm2_hostname=rrlogin.seas.upenn.edu
 shell_name=$(basename $SHELL)
@@ -37,13 +41,13 @@ fi
 # added by travis gem
 [ -f $HOME/.travis/travis.sh ] && source $HOME/.travis/travis.sh
 
-conda_autoenv_path=$(which conda_autoenv.sh)
-if [ -f $conda_autoenv_path ]; then
-  source $conda_autoenv_path
-  if [[ $(basename $SHELL) == zsh ]]; then
-    precmd() { eval "$PROMPT_COMMAND" }
-  fi
-fi
+# conda_autoenv_path=$(which conda_autoenv.sh)
+# if [ -f $conda_autoenv_path ]; then
+#   source $conda_autoenv_path
+#   if [[ $(basename $SHELL) == zsh ]]; then
+#     precmd() { eval "$PROMPT_COMMAND" }
+#   fi
+# fi
 
 autoload -Uz compinit && compinit -i
 
