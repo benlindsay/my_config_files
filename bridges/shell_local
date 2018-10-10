@@ -11,3 +11,4 @@ export DMFT_ADS_PROJ="$SCRATCH/dmft-adsorbing-polymer"
 module load fftw3
 
 alias cds="cd $SCRATCH"
+alias sq='squeue -o "%.9i %.32j %.4u %.2t %.10M %.3D %.17R" -u lindsb'
