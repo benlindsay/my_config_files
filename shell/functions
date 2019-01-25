@@ -201,3 +201,11 @@ function w_all_to_res {
     mv $f ${f%.all}.res
   done
 }
+
+function raw_to_processed {
+  echo $1 | sed s%/raw/%/processed/%
+}
+
+function processed_to_raw {
+  echo $1 | sed s%/processed/%/raw/%
+}

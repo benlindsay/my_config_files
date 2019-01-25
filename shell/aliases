@@ -42,6 +42,8 @@ alias .='source'
 alias shuf='gshuf'
 alias sq='squeue -o "%.9i %.6P %.25j %.4u %.2t %.10M %.3D %.17R" -u lindsb'
 alias scall='scancel -u lindsb'
+alias cdp='cd $(raw_to_processed $PWD)'
+alias cdr='cd $(processed_to_raw $PWD)'
 
 # Git short hash
 alias gda='git describe --always'
