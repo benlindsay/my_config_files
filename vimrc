@@ -352,6 +352,10 @@ nmap <Leader>C :ClangFormatAutoToggle<CR>
 " Auto-enabling auto-formatting
 " autocmd FileType c,cpp,h,hpp ClangFormatAutoEnable
 
+" ------------------------------ BLACK -------------------------------------- "
+
+let g:black_linelength = 80
+" autocmd BufWritePost *.py execute ':Black'
 
 " ================= CUSTOM LINE NUMBER TOGGLING BEHAVIOR ==================== "
 
