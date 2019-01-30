@@ -10,7 +10,13 @@ function! myspacevim#before() abort
   let g:vimfiler_ignore_pattern = '^\%(\.git\|\.DS_Store\)$'
   " Colored column to make 80th column
   set colorcolumn=80
+  " SpaceVim uses s, so we'll just use S instead for replacing a character and
+  " entering insert mode
   nnoremap S s
+  " Set the autocomplete method as described here:
+  " https://spacevim.org/layers/autocomplete/#configuration
+  let g:spacevim_disabled_plugins = ['neocomplcache.vim']
+  let g:spacevim_autocomplete_method = 'completor'
 endfunction
 
 function! myspacevim#after() abort
