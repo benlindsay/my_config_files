@@ -1,4 +1,5 @@
 " .vim_local
 
 Plug 'Vimjas/vim-python-pep8-indent'     " Improved Python indentation
-" Plug 'ambv/black'                        " Python formatting
+Plug 'ambv/black'                        " Python formatting
+Plug 'sbdchd/neoformat'                  " Formatting for lots of languages

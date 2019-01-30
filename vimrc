@@ -357,6 +357,9 @@ nmap <Leader>C :ClangFormatAutoToggle<CR>
 let g:black_linelength = 80
 " autocmd BufWritePost *.py execute ':Black'
 
+" ---------------------------- NEOFORMAT ------------------------------------ "
+let g:neoformat_enabled_python = ['black']
+
 " ================= CUSTOM LINE NUMBER TOGGLING BEHAVIOR ==================== "
 
 function! NumberToggle()
