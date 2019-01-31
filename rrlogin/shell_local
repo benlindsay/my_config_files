@@ -5,7 +5,11 @@
 # aliases
 alias l.='ls -d .* --color'
 alias jnremote="jupyter notebook --no-browser --port=8888"
-alias jlremote="XDG_RUNTIME_DIR= jupyter lab --no-browser --port=8888"
+
+function jlremote {
+  echo $(hostname) > .jupyternode.txt
+  XDG_RUNTIME_DIR= jupyter lab --no-browser --port=8888 --ip=$(hostname)
+}
 
 # variables
 export PATH="$HOME/usr/doxygen/bin:$PATH"
@@ -75,4 +79,10 @@ function print_usage {
   sinfo -o "%C" | tail -1 | tr "/" " " | awk '{print "alloc: "$1"/288\tidle: "$2"/288\tother: "$3"/288"}'
 }
 
-alias showq='showq; echo; print_usage'
+function showq2 {
+  showq
+  echo
+  print_usage
+}
+
+# alias showq='showq; echo; print_usage'
