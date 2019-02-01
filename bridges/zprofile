@@ -1,0 +1,1 @@
+eval $(/home/lindsb/.linuxbrew/bin/brew shellenv)
