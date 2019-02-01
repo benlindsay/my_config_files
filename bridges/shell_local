@@ -4,7 +4,7 @@ compinit
 #allow tab completion in the middle of a word
 setopt COMPLETE_IN_WORD
 
-export PATH=/home/lindsb/local/miniconda/bin:$PATH
+# export PATH=/home/lindsb/local/miniconda/bin:$PATH
 
 export DMFT_ADS_PROJ="$SCRATCH/dmft-adsorbing-polymer"
 
@@ -12,3 +12,8 @@ module load fftw3
 
 alias cds="cd $SCRATCH"
 alias sq='squeue -o "%.9i %.32j %.4u %.2t %.10M %.3D %.17R" -u lindsb'
+
+# Make conda command available
+if [ -f ~/local/miniconda/etc/profile.d/conda.sh ]; then
+  . ~/local/miniconda/etc/profile.d/conda.sh
+fi
