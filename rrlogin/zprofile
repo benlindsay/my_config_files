@@ -1,1 +1,2 @@
 eval $(/home/lindsb/.linuxbrew/bin/brew shellenv)
+export GTAGSLABEL=gtags

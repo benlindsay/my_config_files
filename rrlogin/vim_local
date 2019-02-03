@@ -3,3 +3,4 @@
 Plug 'Vimjas/vim-python-pep8-indent'     " Improved Python indentation
 Plug 'ambv/black'                        " Python formatting
 Plug 'sbdchd/neoformat'                  " Formatting for lots of languages
+Plug 'vim-scripts/gtags.vim'             " Global tags instead of ctags
