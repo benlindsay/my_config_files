@@ -15,6 +15,9 @@ function! myspacevim#before() abort
   nnoremap S s
   " Set the autocomplete method as described here:
   " https://spacevim.org/layers/autocomplete/#configuration
+  let g:spacevim_custom_plugins = [
+        \ ['vim-scripts/gtags.vim'],
+        \ ]
   let g:spacevim_disabled_plugins = ['neocomplcache.vim']
   let g:spacevim_autocomplete_method = 'completor'
 endfunction
@@ -27,4 +30,5 @@ function! myspacevim#after() abort
             \ 'args': ['-l 80', '-'],
             \ }
   let g:neoformat_enabled_python = ['black', 'autopep8']
+  set tags+=./tags,tags;$HOME
 endfunction

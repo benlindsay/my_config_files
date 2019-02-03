@@ -48,3 +48,6 @@ name = 'VersionControl'
 
 [[layers]]
 name = "debug"
+
+[[layers]]
+name = "tags"
