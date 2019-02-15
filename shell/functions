@@ -47,6 +47,19 @@ function jnlocal {
   fi
 }
 
+function jllocal {
+  port=8888
+  node=$(ssh lindsb@rrlogin.seas.upenn.edu 'tail -1 ~/.jupyternode.txt')
+  url="http://localhost:$port"
+  echo "Opening $url"
+  open "$url"              # mac
+  # xdg-open $url          # linux
+  # cmd.exe \c start $url  # windows
+  cmd="ssh -CNL $port:$node:$port lindsb@rrlogin.seas.upenn.edu"
+  echo "Running '$cmd'"
+  eval "$cmd"
+}
+
 function mount_rrlogin {
   umount ~/rrlogin
   sshfs lindsb@rrlogin.seas.upenn.edu:/home/lindsb ~/rrlogin -o volname=rrlogin,reconnect
@@ -152,6 +165,23 @@ function passgen {
 
   echo "$password"
 
+}
+
+function passurl {
+  file=$1
+  sleep_time=2
+  lines="$(gpg -d ~/.password-store/$file.gpg 2> /dev/null)"
+  pass -c $file
+  pass tail $file
+  url_line=$(echo "$lines" | grep "url: ")
+  if [ $(echo "$lines" | grep "url: " | wc -l) -eq 1 ]; then
+    echo "Opening URL in $sleep_time seconds..."
+    sleep $sleep_time
+    url="$(echo "$lines" | grep "url: " | awk '{print $2}')"
+    open "$url"
+  else
+    echo "No URL to open."
+  fi
 }
 
 function macmount {
