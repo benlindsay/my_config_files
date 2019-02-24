@@ -1,5 +1,6 @@
 vim/bundle/
 vim/black/
+vim/pack/
 */.netrwhist
 *.cache
 *.cache/
