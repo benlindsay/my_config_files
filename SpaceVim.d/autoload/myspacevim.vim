@@ -20,6 +20,7 @@ function! myspacevim#before() abort
         \ ]
   let g:spacevim_disabled_plugins = ['neocomplcache.vim']
   let g:spacevim_autocomplete_method = 'completor'
+  let g:spacevim_lint_on_save = 0
 endfunction
 
 function! myspacevim#after() abort
