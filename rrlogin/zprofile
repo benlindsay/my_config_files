@@ -1,2 +1,3 @@
 eval $(/home/lindsb/.linuxbrew/bin/brew shellenv)
+# export LD_LIBRARY_PATH=$HOME/.linuxbrew/lib:/opt/seas/lib64
 export GTAGSLABEL=gtags
