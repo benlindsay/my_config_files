@@ -1,0 +1,11 @@
+name: py27
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=2.7
+  - matplotlib
+  - nb_conda_kernels
+  - numpy
+  - pandas
+  - scipy
