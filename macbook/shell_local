@@ -20,6 +20,8 @@ alias myvm2='eval $(docker-machine env myvm2)'
 # path to paraview packages
 # export PYTHONPATH="/Applications/paraview.app/Contents/Python"
 
+export FFTW_MPI=/usr/local
+
 # Modify PATH
 export PATH="/Applications/RStudio.app/Contents/MacOS:$PATH"
 export PATH="/Applications/R.app/Contents/MacOS:$PATH"
