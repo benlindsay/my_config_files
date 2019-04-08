@@ -18,3 +18,7 @@ setopt menu_complete
 
 # cd to directory just by typing the directory
 setopt autocd
+
+# Make it so you can have exclamation points without doing history expansion
+# i.e. `echo "hello!"` will now work as expected
+setopt no_bang_hist
