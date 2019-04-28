@@ -1,0 +1,11 @@
+name: selenium
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.7
+  - geckodriver
+  - numpy
+  - pandas
+  - python-chromedriver-binary
+  - selenium
