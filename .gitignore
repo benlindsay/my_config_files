@@ -6,4 +6,5 @@ vim/pack/
 *.cache/
 *.cache/*
 /matplotlib/matplotlibrc
-/matplotlib/fontList.json
+/matplotlib/fontList*
+/matplotlib/fontlist*
