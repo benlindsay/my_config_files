@@ -8,6 +8,7 @@ setopt COMPLETE_IN_WORD
 export PATH="/home/lindsb/.linuxbrew/bin:$PATH"
 
 export DMFT_ADS_PROJ="$SCRATCH/dmft-adsorbing-polymer"
+export FFTW_OPENMP="/opt/packages/fftw3/fftw-3.3.4/install"
 
 module load fftw3
 module load git # updated git to make features in SpaceVim available
@@ -19,3 +20,11 @@ alias sq='squeue -o "%.9i %.32j %.4u %.2t %.10M %.3D %.17R" -u lindsb'
 if [ -f ~/local/miniconda/etc/profile.d/conda.sh ]; then
   . ~/local/miniconda/etc/profile.d/conda.sh
 fi
+
+function rsync_to_rrlogin {
+  bridges_dir=$(readlink -f $1)
+  parent_dir=$(dirname $bridges_dir)
+  rrlogin_dir=/home/lindsb/studies/${parent_dir#/pylon5/mr5fpop/lindsb/}/
+  echo "rsync -av $bridges_dir $RRLOGIN:$rrlogin_dir"
+  rsync -av $bridges_dir $RRLOGIN:$rrlogin_dir
+}
