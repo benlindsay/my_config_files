@@ -63,3 +63,11 @@ autoload -Uz compinit && compinit -i
 #   autoload -U +X bashcompinit && bashcompinit
 #   source /usr/local/etc/bash_completion.d/passtail
 # fi
+
+function rsync_from_rrlogin {
+  macbook_dir=$(greadlink -f $1)
+  parent_dir=$(dirname $macbook_dir)
+  rrlogin_dir=/home/lindsb/studies/${macbook_dir#/Users/benlindsay/scratch/}
+  echo "rsync -av $RRLOGIN:$rrlogin_dir $parent_dir/"
+  rsync -av $RRLOGIN:$rrlogin_dir $parent_dir/
+}
