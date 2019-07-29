@@ -8,6 +8,8 @@ dependencies:
   - bokeh
   - cookiecutter
   - cython
+  - dask
+  - distributed
   - flake8
   - matplotlib
   - nb_conda_kernels
