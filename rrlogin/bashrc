@@ -25,6 +25,6 @@ alias l.='ls -d .* --color'
 # source ~/bin/small_funcs.sh
 
 # acd_func adds functionality to the cd command
-source ~/bin/cd_func.sh
+# source ~/bin/cd_func.sh
 
 test -f ~/.git-completion.bash && . $_
