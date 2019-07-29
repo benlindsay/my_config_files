@@ -32,6 +32,8 @@ export PYTHONPATH="$HOME/.local/site-packages:$PYTHONPATH"
 export BCP_NP_PHASE_PROJ="$HOME/stampede/work/bcp-np-phase"
 export DMFT_ADS_PROJ="$HOME/scratch/dmft-adsorbing-polymer"
 
+export EDITOR="/usr/local/bin/vim"
+
 if [ -f ~/miniconda/etc/profile.d/conda.sh ]; then
   . ~/miniconda/etc/profile.d/conda.sh
 fi
