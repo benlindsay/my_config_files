@@ -163,6 +163,9 @@ function passgen {
     fi
   done
 
+  rand_digit=$(( RANDOM % 10))
+  password="$password$rand_digit"
+
   echo "$password"
 
 }
