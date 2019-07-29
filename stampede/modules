@@ -1,6 +1,6 @@
-module load git
-module load vmd
+# module load git
+# module load vmd
 
-# The intel module is a prerequisite for the fftw3 module
-module load intel
-module load fftw3
+# # The intel module is a prerequisite for the fftw3 module
+# module load intel
+# module load fftw3
