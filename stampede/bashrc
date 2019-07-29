@@ -53,6 +53,11 @@ if [ -z "$__BASHRC_SOURCED__" -a "$ENVIRONMENT" != BATCH ]; then
   source ~/.shell/functions
   source ~/.shell_local
 
+  # Make conda command available
+  if [ -f ~/local/miniconda3/etc/profile.d/conda.sh ]; then
+    . ~/local/miniconda3/etc/profile.d/conda.sh
+  fi
+
   # Aliases specific to stampede
   alias ls='ls --color'
   alias l='ls'
