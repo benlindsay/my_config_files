@@ -1,0 +1,6 @@
+name: gatsby
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - nodejs

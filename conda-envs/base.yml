@@ -4,6 +4,8 @@ channels:
   - conda-forge
 dependencies:
   - python=3.7
+  - black
   - jupyter
   - jupyterlab
+  - jupyterlab_code_formatter
   - nb_conda

@@ -48,7 +48,7 @@ function jnlocal {
 }
 
 function jllocal {
-  port=8888
+  port=9753
   node=$(ssh lindsb@rrlogin.seas.upenn.edu 'tail -1 ~/.jupyternode.txt')
   url="http://localhost:$port"
   echo "Opening $url"

@@ -73,3 +73,15 @@ function rsync_from_rrlogin {
   echo "rsync -av $RRLOGIN:$rrlogin_dir $parent_dir/"
   rsync -av $RRLOGIN:$rrlogin_dir $parent_dir/
 }
+
+function jllocal2 {
+  port=5678
+  remote_username=lindsb
+  remote_hostname=rrlogin.seas.upenn.edu
+  url="http://localhost:$port"
+  echo "Opening $url"
+  open "$url"
+  cmd="ssh -CNL localhost:"$port":localhost:"$port" $remote_username@$remote_hostname"
+  echo "Running '$cmd'"
+  eval "$cmd"
+}
