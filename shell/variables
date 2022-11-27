@@ -1,22 +1,3 @@
-# Variables to facilitate scp file transfers
-export RRLOGIN="lindsb@rrlogin.seas.upenn.edu"
-export BRIDGES="lindsb@bridges.psc.xsede.org"
-export COMET="lindsb@comet.sdsc.xsede.org"
-export STAMPH="lindsb@stampede2.tacc.utexas.edu"
-export STAMPW="lindsb@stampede2.tacc.utexas.edu:/work/03555/lindsb/stampede2"
-export KNLH="lindsb@login-knl1.stampede.tacc.utexas.edu"
-export KNLW="lindsb@login-knl1.stampede.tacc.utexas.edu:/work/03555/lindsb"
-export DARTERH="lindsb@darter.nics.xsede.org"
-export DARTERS="lindsb@darter.nics.xsede.org:/lustre/medusa/lindsb"
-export ENIAC="lindsb@eniac.seas.upenn.edu"
-export RRENIAC="rrgroup@eniac.seas.upenn.edu"
-export RRSTORAGE="lindsb@rrstorage.synology.me"
-export ALUMNI="alumni@rrstorage.synology.me"
-
-# Set characters to include in random password generation for unix pass
-export PASSWORD_STORE_CHARACTER_SET="a-zA-Z0-9*&^%$\#@!"
-export PASSWORD_STORE_ENABLE_EXTENSIONS=true
-
 if [[ $(basename $SHELL) == 'zsh' ]]; then
   export FPATH="$HOME/.zsh/completion:$FPATH"
 fi
@@ -33,6 +14,6 @@ fi
 # LS_COLORS=$LS_COLORS:'*.bz2=31'  # bzip2 Archive	= Bold, Red
 # LS_COLORS=$LS_COLORS:'*.zip=31'  # zip Archive		= Bold, Red
 # LS_COLORS=$LS_COLORS:'*.dmg=31'  # Disk Image		= Bold, Red
-LS_COLORS=$LS_COLORS:'ln=35'     # symlinks             = Purple
+# LS_COLORS=$LS_COLORS:'ln=35'     # symlinks             = Purple
 
-export LS_COLORS
+# export LS_COLORS

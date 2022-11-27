@@ -1,87 +1,14 @@
-alias vmd='/Applications/VMD-1.9.2.app/Contents/MacOS/startup.command'
-# alias ovito='/Applications/Ovito.app/Contents/MacOS/ovito'
-# alias ovitos='/Applications/Ovito.app/Contents/MacOS/ovitos'
-export PATH="/Applications/Ovito.app/Contents/MacOS:$PATH"
-alias k3='source activate kaggle3'
-alias spark='docker run -v $HOME/Jupyter:/home/jovyan/work -it -p 8888:8888 jupyter/all-spark-notebook'
-alias chrome='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome'
-alias timeout='gtimeout'
-alias myvm1='eval $(docker-machine env myvm1)'
-alias myvm2='eval $(docker-machine env myvm2)'
-
 # Source bash_completion if available
 # if [ -f /usr/local/etc/bash_completion ]; then
 #   source /usr/local/etc/bash_completion
 # fi
 
-# Add path to pvpython executable
-# export PATH="$PATH:/Applications/paraview.app/Contents/bin"
-#
-# path to paraview packages
-# export PYTHONPATH="/Applications/paraview.app/Contents/Python"
-
-export FFTW_MPI=/usr/local
-
 # Modify PATH
-export PATH="/Applications/RStudio.app/Contents/MacOS:$PATH"
-export PATH="/Applications/R.app/Contents/MacOS:$PATH"
-export PATH="/usr/local/bin:$PATH"
-export PATH="$HOME/.local/bin:$PATH"
-
-export PYTHONPATH="$HOME/.local/site-packages:$PYTHONPATH"
-export BCP_NP_PHASE_PROJ="$HOME/stampede/work/bcp-np-phase"
-export DMFT_ADS_PROJ="$HOME/scratch/dmft-adsorbing-polymer"
+# export PATH="$HOME/.local/bin:$PATH"
 
 export EDITOR="/usr/local/bin/vim"
 
-if [ -f ~/miniconda/etc/profile.d/conda.sh ]; then
-  . ~/miniconda/etc/profile.d/conda.sh
-fi
-
-# iterm2 stuff
-export iterm2_hostname=rrlogin.seas.upenn.edu
-shell_name=$(basename $SHELL)
-if [ -f ~/.iterm2_shell_integration.$shell_name ]; then
-  source ~/.iterm2_shell_integration.$shell_name
-fi
-# added by travis gem
-[ -f $HOME/.travis/travis.sh ] && source $HOME/.travis/travis.sh
-
-# conda_autoenv_path=$(which conda_autoenv.sh)
-# if [ -f $conda_autoenv_path ]; then
-#   source $conda_autoenv_path
-#   if [[ $(basename $SHELL) == zsh ]]; then
-#     precmd() { eval "$PROMPT_COMMAND" }
-#   fi
-# fi
-
-autoload -Uz compinit && compinit -i
-
-# if [ -f /usr/local/etc/bash_completion.d/passtail ]; then
-#   # https://stackoverflow.com/a/8492043/2680824
-#   # autoload bashcompinit
-#   # bashcompinit
-#   autoload -U +X compinit && compinit
-#   autoload -U +X bashcompinit && bashcompinit
-#   source /usr/local/etc/bash_completion.d/passtail
-# fi
-
-function rsync_from_rrlogin {
-  macbook_dir=$(greadlink -f $1)
-  parent_dir=$(dirname $macbook_dir)
-  rrlogin_dir=/home/lindsb/studies/${macbook_dir#/Users/benlindsay/scratch/}
-  echo "rsync -av $RRLOGIN:$rrlogin_dir $parent_dir/"
-  rsync -av $RRLOGIN:$rrlogin_dir $parent_dir/
-}
-
-function jllocal2 {
-  port=5678
-  remote_username=lindsb
-  remote_hostname=rrlogin.seas.upenn.edu
-  url="http://localhost:$port"
-  echo "Opening $url"
-  open "$url"
-  cmd="ssh -CNL localhost:"$port":localhost:"$port" $remote_username@$remote_hostname"
-  echo "Running '$cmd'"
-  eval "$cmd"
-}
+# pyenv init stuff
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
